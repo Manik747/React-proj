@@ -5,9 +5,10 @@ import LoginForm from './LoginForm';
 import PropTypes from 'prop-types';
 
 export default class Authentication extends Component {
-
+// this where  the form data is  handled after it is submitted 
     handleSubmit = async (event) => {
         event.preventDefault();
+        // here the route that the form is sent from is determined and sends the data to the correct route on the server side to either register or loggout a user
         const userRoute = this.props.type === 'register' ? '/users/register' : '/users/login';
         try {
             const response = await api.post(userRoute, {
@@ -19,7 +20,7 @@ export default class Authentication extends Component {
             console.error('There was a problem authenticating user', error);
         };
     };
-
+// this is how we have react decide which form to render based on the link/route the user used 
     render() {
         return (
             <Fragment>
