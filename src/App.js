@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import Welcome from './components/Welcome';
+import { connect } from 'react-redux'
+import { simpleAction } from './actions/simpleAction'
 
 class App extends Component {
   
@@ -17,10 +19,18 @@ simpleAction = (event) => {
       }
       </pre>
       <Welcome />
-     
-      </div>
+     </div>
     )
   }
 }
+
+const mapStateToProps = state => ({
+  ...state
+ })
+
+
+const mapDispatchToProps = dispatch => ({
+  simpleAction: () => dispatch(simpleAction())
+ })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
