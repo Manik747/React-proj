@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import './App.css';
-import Welcome from './components/Welcome';
+import React, { Component } from "react";
+import "./App.css";
+import Welcome from "../homePage/Welcome";
 
 class App extends Component {
   render() {
@@ -9,7 +9,7 @@ class App extends Component {
         <Welcome />
       </div>
     );
-  };
-};
+  }
+}
 
 export default App;

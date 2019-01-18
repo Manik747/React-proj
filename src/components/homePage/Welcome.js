@@ -1,15 +1,14 @@
-import React, { Fragment, Component } from 'react';
-import { api } from '../api/init';
+import React, { Fragment, Component } from "react";
+import { api } from "../../api/init";
 
 export default class Welcome extends Component {
-
   constructor(props) {
     super(props);
 
     this.state = {
-      response: ''
+      response: ""
     };
-  };
+  }
 
   fetchHomepage = async () => {
     try {
@@ -17,8 +16,11 @@ export default class Welcome extends Component {
       console.log(response.data);
       this.setState({ response: response.data });
     } catch (error) {
-      console.error("There was a problem retrieving response from server", error);
-    };
+      console.error(
+        "There was a problem retrieving response from server",
+        error
+      );
+    }
   };
 
   componentDidMount = () => {
@@ -32,7 +34,5 @@ export default class Welcome extends Component {
         <p>{this.state.response}</p>
       </Fragment>
     );
-  };
-};
-
-
+  }
+}
