@@ -25,10 +25,25 @@ class Authentication extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        const userRoute = this.props.authType === 'register' ? '/users/register' : '/users/login';
-        const postData = {
-            email: event.target.email.value,
-            password: event.target.password.value
+        let userRoute;
+        let postData;
+        switch (this.props.authType) {
+            case 'register':
+                userRoute = '/users/register';
+                postData = {
+                    email: event.target.email.value,
+                    password: event.target.password.value
+                };
+                break;
+            case 'login':
+                userRoute = '/users/login';
+                postData = {
+                    email: event.target.email.value,
+                    password: event.target.password.value
+                };
+                break;
+            default:
+                console.error('Error: Faulty path');
         };
 
         this.props.authenticateUser(userRoute, postData);
