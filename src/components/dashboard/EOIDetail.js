@@ -12,7 +12,11 @@ import {
     Label,
     Input
 } from 'semantic-ui-react';
-import { Field, FormSpy } from "react-final-form";
+import { api } from '../../api/init'
+
+var view_card = (_id) => {
+    api.get(`/dashboard/${_id}`)
+}
 
 export default class EOIDetails extends Component {
 
