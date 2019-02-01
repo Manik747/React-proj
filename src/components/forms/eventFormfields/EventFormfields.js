@@ -1,38 +1,47 @@
 import React from 'react'
-import { Form, Label, TextArea, Input, Checkbox, Icon } from "semantic-ui-react";
+import { Form, Label, TextArea, Input, Checkbox, Popup } from "semantic-ui-react";
+import "../../../app/App.css";
+import { List, Button } from 'semantic-ui-react';
+import { Field } from "react-final-form";
+
+const style = {
+  opacity: 0.87,
+  color: 'red'
+};
 
 export const InputText = (props) => {
- const { placeholder, type, input, meta: { active, error, touched } } = props;
+  const { placeholder, position, icon, iconPosition, type, input, meta: {name, active, error, touched } } = props;
  return (
-   <div className={active ? "active" : ""}>
-    <Form.Input
-    //  label={placeholder}
-     type={type}
-     placeholder={placeholder}
-     {...input}
-    />
-    {error && touched && <span>{error}</span>}
+   <div className={active ? 'active' : ''}>
+    <Popup 
+      color='red'
+      key={placeholder} 
+      trigger={< Form.Input name={name} type={type} icon={icon} iconPosition={iconPosition} placeholder={placeholder} {...input} />}
+      header={placeholder}
+      content={error}
+      position={position ? position : 'right center'}
+      style={style}
+      // on='focus'
+      //  open={!error ? false : null}      
+      />     
    </div>
  );
 }
 
 export const EmailInputText = (props) => {
- const { placeholder, iconPosition, type, input, meta: { active, error, touched } } = props;
+ const { style, placeholder, iconPosition, type, input, meta: { active, error, touched } } = props;
  return (
   <div className={active ? "active" : ""}>
    <Input
-    label={placeholder}
+    icon='at'
+    style={style}
     type={type}
     placeholder={placeholder}
     iconPosition={iconPosition}
     {...input}
-    >
-      <Label>
-         <Icon name='at' />
-      </Label>
-      <input />
-   </Input>
-   {error && touched && <span>{error}</span>}
+    />    
+   {error && touched && <Label basic color='red' pointing>{error}</Label>} 
+   {/* {error && touched && <span>{error}</span>}  */}
   </div>
  );
 }
@@ -99,5 +108,63 @@ export const DatePicker = (props) => {
         </Form.Input>
       {error && touched && <span>{error}</span>}
     </div >
+  );
+}
+
+export const RenderSocials = ({ fields, meta: { touched, pristine, error}}) => {
+  return (
+    <div>
+      <Form.Group>
+        <Form.Field width={16}>
+          <List>
+            {fields.map((field, index) => (
+              <List.Item key={index}>
+                <Form.Group>
+                  <Form.Field width={15}>
+                    <Field
+                      name={`${field}.name`}
+                      type="text"
+                      component={InputText}
+                      placeholder="Add Link of Your Social Media Page"
+                    />
+                  </Form.Field>
+                  <Form.Field width={1}>
+                    <Form.Button
+                      icon="trash"
+                      circular
+                      type="button"
+                      onClick={() => fields.remove(index)}
+                    />
+                  </Form.Field>
+                </Form.Group>
+              </List.Item>
+            ))}
+          </List>
+        </Form.Field>
+      </Form.Group>
+      <Form.Group>
+        <Form.Field style={{ textAlign: "right" }} width={12}>
+          {error && error._error && (
+            <Label basic color="red" pointing="right" position="top center">
+              {error._error}
+            </Label>
+          )}
+          {error && !error._error && (
+            <Label basic color="red" pointing position="top center">
+              {"Must provide a valid url link i.e. http://facebook.com and not too many link"}
+            </Label>
+          )}
+        </Form.Field>
+        <Form.Field width={4}>
+          <Form.Button
+            type="button"
+            icon="plus"
+            negative
+            content="Add Link"
+            onClick={() => fields.push({})}
+          />
+        </Form.Field>
+      </Form.Group>
+    </div>
   );
 }

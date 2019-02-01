@@ -39,16 +39,20 @@ class Nav extends Component {
                     name='home'
                     active={activeItem === 'home'}
                     onClick={this.handleItemClick}
-                    exact activeClassName="active teal" >
-                    <Icon name='home' />Home
+                    exact activeClassName="active red"
+                    style={dodgerRed}
+                >
+                    <Icon name='home' />HOME
                 </Menu.Item>
                 <Menu.Item
                     as={NavLink} to='/about'
                     name='about'
                     active={activeItem === 'info'}
                     onClick={this.handleItemClick}
-                    activeClassName="active teal" >
-                    <Icon name='info' />About
+                    activeClassName="active red"
+                    style={dodgerRed}
+                >
+                    <Icon name='info' />ABOUT
                 </Menu.Item>
                 <Menu.Item
                     as={NavLink} to='/dashboard'
@@ -65,8 +69,10 @@ class Nav extends Component {
                     name='create'
                     active={activeItem === 'add'}
                     onClick={this.handleItemClick}
-                    activeClassName="active teal" >
-                    <Icon name='add circle' />Create Event
+                    activeClassName="active red"
+                    style={dodgerRed}
+                >
+                    <Icon name='add circle' />CREATE EVENT
                 </Menu.Item>
 
                 {
@@ -97,7 +103,14 @@ const mapStateToProps = state => ({
 
 })
 
+const dodgerRed = {
+    fontFamily: 'Raley, sans-serif',
+    fontSize: 12,
+    fontWeight: 700,
+    letterSpacing: 2,
+    color: '#9d9d9d'
 
+}
 // connect function takes two arguments; 
 // The first defines the data being pulled from store into the called component - mapStateToProps
 // The second defines the actions being sent from the called component to update the store - mapDispatchToProps

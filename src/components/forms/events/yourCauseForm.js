@@ -1,5 +1,5 @@
 import React from 'react';
-import { Field } from "react-final-form";
+import { FormSpy, Field } from "react-final-form";
 import {
   Grid,
   Segment,
@@ -13,17 +13,17 @@ import {targetOptions} from '../optionsData/targetOptions';
 import { InputTextArea, InputCheckBox, DropdownMenu } from '../eventFormfields/EventFormfields';
 
 function YourCauseForm(props) {
-  const { handleSubmit, pristine, submitting, invalid, prevStep, nextStep, values } = props;
-  console.log('Values within CauseForm', values)
+  const { handleSubmit, hasValidationErrors, pristine, submitting, invalid, prevStep, nextStep, values } = props;
+  console.log('Values within CauseForm', props)
   return (
     <Grid textAlign='center' >
       <Grid.Column width={10}>
         <Segment raised>
           <Header
-            style={{ marginBottom: 10 }}
-            sub color='red'
+            style={{ marginBottom: 10, color: '#9d9d9d'}}
+            sub 
             content='Your Cause' />
-          <Form onSubmit={handleSubmit}>
+          <Form>
             <Form.Field>
               <Label style={{ background: '#fefafa', padding: 10 }}>
                 Descript as to why you would like to hold the world's biggest garage sale.
@@ -50,15 +50,20 @@ function YourCauseForm(props) {
             </Form.Field>
             <Form.Field>
               <Field
-                name="expectedTarget"
+                name="target_value"
                 type="dropdown"
                 label="Select your expected Target"
                 component={DropdownMenu}
                 options={targetOptions}
                 subscription={{ value: true, active: true, error: true, touched: true }} />
             </Form.Field>
-            <Button label="Continue" primary disabled={invalid ||submitting || pristine} onClick={nextStep} />
-            <Button label="Back" primary={false} disabled={invalid || submitting || pristine} onClick={prevStep} />
+            <FormSpy subscription={{ values: true }}>
+              {({ values }) => (
+                 <Button type='button' label="Continue" color='red' disabled={(Object.keys(values).length < 5) ? true : false} onClick={nextStep} />
+              )}
+            </FormSpy>
+            {/* <Button type='button' label="Continue" color='red' disabled={submitting || pristine} onClick={nextStep} /> */}
+            <Button label="Back" primary={false} disabled={invalid || hasValidationErrors || pristine} onClick={prevStep} />
           </Form>
         </Segment>
       </Grid.Column>

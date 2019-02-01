@@ -5,7 +5,6 @@ const api = axios.create({
     process.env.NODE_ENV === "production"
       ? "http://localhost:3000/"
       : "https://protected-scrubland-68099.herokuapp.com"
-  // : "http://localhost:3000/"
 });
 
 export { api };

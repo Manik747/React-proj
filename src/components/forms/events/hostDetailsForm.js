@@ -6,34 +6,43 @@ import {
   Form,
   Button,
 } from 'semantic-ui-react';
-import { Field} from "react-final-form";
+import { FormSpy, Field } from "react-final-form";
+import { FieldArray } from "react-final-form-arrays";
+// import {showResults } from './EventForm';
 
 import FormStateToRedux from "../FormStateToRedux";
-import { InputText, EmailInputText} from '../eventFormfields/EventFormfields'
+import { InputText, RenderSocials } from '../eventFormfields/EventFormfields';
+
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+export const showResults = async values => {
+  await sleep(500);
+  window.alert(JSON.stringify(values, undefined, 2));
+}
 
 function HostDetailsForm(props) {
-  const { handleSubmit, pristine, submitting, invalid, nextStep, page } = props;
+  const { values, form, handleSubmit, hasValidationErrors, pristine, submitting, invalid, nextStep, page } = props;
+  console.log('HandleSubmit...', values)
   return (
     <Grid textAlign='center' >
       <Grid.Column width={10}>
         <Segment raised>
           <FormStateToRedux form="userForm" />
-          <Header sub color='teal' content='Your Details' style={{ margin: 10 }} />
-          <Form onSubmit={handleSubmit}>
+          <Header sub style={styles.DodgerRed} content='Your Details' />
+          <Form onSubmit={handleSubmit} >
             <Form.Field>
-              <Field                
-                name='firstName'
-                placeholder='First Name' 
-                component={InputText} 
+              <Field
+                name='first_name'
+                placeholder='First Name'
+                component={InputText}
                 subscription={{ value: true, active: true, error: true, touched: true }}
               />
             </Form.Field>
             <Form.Field>
               <Field
-                name='lastName'
+                name='last_name'
                 type='text'
                 placeholder='Last Name'
-                component={InputText} 
+                component={InputText}
                 subscription={{ value: true, active: true, error: true, touched: true }}
               />
             </Form.Field>
@@ -41,37 +50,47 @@ function HostDetailsForm(props) {
               <Field
                 name='email'
                 type='email'
+                label='Email address'
+                // style={{color: '#cb3538'}}
+                icon='at'
                 iconPosition='left'
-                component={EmailInputText} 
-                placeholder='Email'
+                component={InputText}
+                placeholder='Email Address'
                 subscription={{ value: true, active: true, error: true, touched: true }}
-                >
+              >
               </Field>
             </Form.Field>
             <Form.Field>
               <Field
-                name='organization'
+                name='organisation'
                 type='text'
                 placeholder='Your Organization'
                 component={InputText}
                 subscription={{ value: true, active: true, error: true, touched: true }}
               />
             </Form.Field>
-            <Form.Group >
-              <Form.Field width={12} >
-                <Field
-                  name='social'
-                  type='text'
-                  placeholder='Your links to social media pages'
-                  component={InputText}
-                  subscription={{ value: true, active: true, error: true, touched: true }}
-                />
-              </Form.Field>
-              <Form.Field width={4}>
-                <Form.Button floated='center' color='teal' type="button" content='Add links'/>
-              </Form.Field>
-            </Form.Group>
-             {!page && <Button type='button'label="Continue" primary disabled={invalid || submitting || pristine} onClick={nextStep} />}
+            <Form.Field>
+              <FieldArray
+                name='socials'
+                type='text'
+                component={RenderSocials}
+                subscription={{ value: true, active: true, error: true, touched: true }}
+              />
+            </Form.Field>
+            <FormSpy subscription={{ values: true, errors: true }}>            
+              {({ values, errors }) => (
+                !page && <Button 
+                            type='button' 
+                            label="Continue" 
+                            color='red' 
+                            disabled={((Object.keys(values).length < 4)) || !values.socials }
+                            onClick={nextStep}
+                            />
+                // <pre>{JSON.stringify(!!errors.socials, undefined, 2)}</pre>
+                // <pre>{JSON.stringify((Object.keys(values).length < 4), undefined, 2)}</pre>
+              )}
+              
+            </FormSpy>          
           </Form>
         </Segment>
       </Grid.Column>
@@ -79,4 +98,11 @@ function HostDetailsForm(props) {
   )
 }
 
+const styles = {
+  DodgerRed: {
+    color: '#9d9d9d',
+    fontWeight: 'bold',
+    marginBottom: 10
+  }
+}
 export default HostDetailsForm;
