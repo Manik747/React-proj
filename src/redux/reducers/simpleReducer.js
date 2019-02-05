@@ -1,7 +1,7 @@
 /*
  src/reducers/simpleReducer.js
 */
-import { SIMPLE_ACTION } from "../constants/types";
+import { SIMPLE_ACTION } from "../actions/constants/types";
 
 const initialState = {
   result: ""

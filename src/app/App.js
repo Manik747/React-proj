@@ -18,8 +18,12 @@ import LandingPg from "../components/pages/LandingPage/LandingPg";
 import InfoPg from "../components/pages/LandingPage/InfoPg"
 import EOIDetails from "../components/dashboard/EOIDetail"
 import AdminDashboard from "../components/dashboard/AdminDashboard"
+import { getSessionAuthToken} from "../redux/actions/authenticateUserAction";
 
 class App extends Component {
+  componentDidMount() {
+    this.props.getSessionAuthToken("AuthToken");
+  }
 render() {
     const { loggedIn, userRole } = this.props;
     console.log('loggedIn, userRole', loggedIn, userRole);
@@ -34,25 +38,24 @@ render() {
                 <Switch>
                   <Route exact path="/" component={LandingPg} />
                   <Route path="/details" component={EOIDetails} />
-                  {
-                    loggedIn && userRole === 'admin' &&
-                    <Route path="/dashboard" component={AdminDashboard} />
-                  }
+                  {loggedIn && userRole === "admin" && (
+                    <Route path="/dashboard/" component={AdminDashboard} />
+                  )}
                   <Route path="/about" component={About} />
                   <Route path="/create" component={CreateEventForm} />
-                  <Route path="/users/register" component={Authentication} />
+                  <Route
+                    path="/users/register"
+                    component={Authentication}
+                  />
                   <Route path="/users/login" component={Authentication} />
                   <Route path="/users/logout" component={Authentication} />
                   <Route component={NotFound} />
                 </Switch>
               </Fragment>
-
             </LastLocationProvider>
           </div>
         </Router>
-      </div >
-
-
+      </div>
     );
   };
 }
@@ -64,5 +67,5 @@ const mapPropsToTypes = state => ({
 
 export default connect(
   mapPropsToTypes,
-  {}
+  { getSessionAuthToken}
 )(App);

@@ -9,8 +9,9 @@ import { LandingPg } from '../pages/LandingPage/LandingPg'
 import { authenticateUser, logoutUser } from "../../redux/actions/authenticateUserAction";
 
 class Authentication extends Component {
-
-
+    // componentDidMount(){
+    //     this.props.getSessionAuthToken("AuthToken");
+    // }
     handleSubmit = (event) => {
         event.preventDefault();
         const userRoute = this.props.history.location.pathname;
@@ -25,17 +26,23 @@ class Authentication extends Component {
     };
 
     render() {
-        const { loggedIn, role } = this.props
+        const { isLoggingIn, loggedIn, role, error } = this.props
         // const from = lastLocation ? lastLocation.pathname : '/';
         const authType = this.props.history.location.pathname.split('/')[2];
-        console.log('props here all the way', this.props.history)
+        
+        console.log('props here all the way | isLoggingIn', this.props.history, isLoggingIn)
+        console.log('props errors logging in', this.props.error)
+        let flash = false;
+        if (error) flash = error.response;
+        console.log('props errors logging in', flash.data)
+
         return (
             <Fragment>
                 {loggedIn && role === 'admin' && <Redirect to='/dashboard' />}
                 {loggedIn && role === 'user' && <Redirect to='/' />}
                 {authType === 'logout' && <Redirect to='/' />}
-                {authType === 'register' && <RegistrationForm submit={this.handleSubmit} />}
-                {authType === 'login' && <LoginForm submit={this.handleSubmit} />}
+                {authType === 'register' && <RegistrationForm loading={isLoggingIn} flash={flash} submit={this.handleSubmit} />}
+                {authType === 'login' && <LoginForm loading={isLoggingIn} flash={flash} submit={this.handleSubmit} />}
             </Fragment>
         );
     };
@@ -51,9 +58,10 @@ Authentication.propTypes = {
 
 const mapStateToProps = state => ({
     loggedIn: state.auth.loggedIn,
+    isLoggingIn: state.auth.logging,
     user: state.auth.authenticatedUserEmail,
     role: state.auth.authenticatedUserRole,
-    error: state.auth.authError
+    error: state.auth.authError,
 })
 
 // connect function takes two arguments; 

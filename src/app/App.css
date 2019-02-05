@@ -22,19 +22,18 @@ html {
     height: 70%;
 }
 
-.call-to-act{
+.call-to-act {
     display: grid;
     grid-template-columns: 10% 50% 30% 10%;
     grid-template-rows: 30%;
     background: #cb3538;
-
 }
 
-.call1{
+.call1 {
     font-family: 'Montserrat', sans-serif;
-    color:white;
+    color: white;
     grid-column-start: 2;
-    grid-column-end:  3;
+    grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 1;
     font-size: 2em;
@@ -93,6 +92,7 @@ h1{
     grid-column-start: 4;
     grid-column-end:  5;
 }
+
 
 .sticky {
     position: fixed;
@@ -409,7 +409,8 @@ iframe {
     flex-direction: column;
     margin: 0 auto;
     width: 600px;
-    height: 100vh;
+    /* background: yellow; */
+    /* height: 100vh; */
 }
 
 .eoiCards {
@@ -425,11 +426,29 @@ iframe {
 /* Footer styling*/
 
 .footer{
-    display: inline-flex;
+    display:flex;
+    justify-content: space-around;
     width: 100%;
     margin: 0 auto;
-    height: 300px;
   }
+
+.section1{
+    display:flex;
+    flex-direction: column;
+
+}
+
+.section2{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.section3{
+    display: flex;
+    align-items: center;
+}
+  
   
   .Icon{
     font-size: 4rem;
@@ -443,8 +462,8 @@ iframe {
   }
   
   .FooterLogo{
-    height: 7rem;
-    width: 7rem;
+    height: 12rem;
+    width: 12rem;
     display: flex;
     align-content: center;
   }
