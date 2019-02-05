@@ -37,13 +37,13 @@ const CollectUserDetailsForm = (props) => {
 
         }
       </TransitionGroup>
-      <FormSpy subscription={{ values: true }}>
+      {/* <FormSpy subscription={{ values: true }}>
         {({ values }) => <pre>
           <h3 style={{ color: 'red', margin: 20, textAlign: 'center' }}>For Debugging Purposes Only</h3>
           <hr />
           <p style={{ color: 'teal', padding: '15px 20px 20px 200px' }}>{JSON.stringify(values, undefined, 2)}</p>
         </pre>}
-      </FormSpy>
+      </FormSpy> */}
     </div>
     // </form>
   );
