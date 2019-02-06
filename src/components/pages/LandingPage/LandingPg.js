@@ -24,14 +24,14 @@ onClickMore() {
         {
           loggedIn && role === 'user' &&
             <FlashMessage 
-            color='teal' 
+            color='#cb3538'
             message={'You have signed in successfully...   '} 
             />
         }
         {
           loggedOut && 
             <FlashMessage
-                color='teal'
+                color='#cb3538'
                 message={'You have signed out successfully...   ' }
                 />
 

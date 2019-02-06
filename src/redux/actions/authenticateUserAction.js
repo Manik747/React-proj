@@ -16,7 +16,7 @@ const authenticateUser = (userRoute, postData) => async dispatch => {
 
     const AuthToken = response.config.headers.Authorization;
     const user =response.data;
-    const userToken = { user, token: AuthToken.split(" ")[1].trim() };
+    const userToken = { user, token: AuthToken.split(" ")[1].trim() || "" };
     console.log("Respond from authenticateUser action response.config :>>>>>", response.data);
 
     console.log("Respond from authenticateUser action response.config.data.email:>>>>>", user);
