@@ -40,13 +40,13 @@ class AdminDashboard extends Component {
 
             <React.Fragment>
                 <Card.Group centered>
-                    <Card color="red" fluid >
-                        <Card.Content color="red"  >
+                    <Card color="red" fluid  >
+                        <Card.Content color="red" className= "cardContainer" >
                             <input type="hidden" value={Data._id}></input>
                             <Card.Header key={Data.first_name} >{Data.host.first_name}</Card.Header>
                             <Card.Meta key={Data.createdAt}>{Data.createdAt}</Card.Meta>
                             <Card.Description key={Data.organisation}>{Data.host.organisation}</Card.Description>
-                            <Button as={Link} animated inverted color="red" to={`/dashboard/${Data._id}`} id={Data._id}>
+                            <Button  className="viewButton" as={Link} animated inverted color="red" to={`/dashboard/${Data._id}`} id={Data._id}>
                                 <Button.Content visible >VIEW</Button.Content>
                                 <Button.Content hidden>
                                     <Icon name='arrow right' />

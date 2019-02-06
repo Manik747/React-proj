@@ -411,6 +411,11 @@ iframe {
     /* height: 100vh; */
 }
 
+.viewButton{
+    height: 70px;
+
+}
+
 .eoiCards {
     color: #cb3538;
 }
