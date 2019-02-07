@@ -131,7 +131,11 @@ export default class EOIDetails extends Component {
             deniedReason
         });
 
+        
+
     }
+
+    
 
     handleAcptShort = async () => {
         // if (this.state.descCheck &&
@@ -172,6 +176,16 @@ export default class EOIDetails extends Component {
                 denied_reason: this.state.deniedReason}) 
                 console.log(response.data)
                 this.props.history.push('/dashboard')
+
+    }
+
+    handleRemoveShortlist = async () => {
+        const { id } = this.props.match.params;
+        this.setState({shortlisted: false})
+        const response= await api.put(`/dashboard/${id}`, 
+        { shortlisted: false }) 
+            console.log(response.data)
+
 
     }
 
@@ -394,7 +408,8 @@ export default class EOIDetails extends Component {
                                             <List.Header style={{ color: "#cb3538" }}>
                                                 Has the host provided social Links, hosts social links have been checked and the host demonstates upstanding bevaiour on these platforms?
                                                 </List.Header>
-                                            Check if yes - <Checkbox onChange={this.handleToggle} id="socialsCheck" />
+                                            Check if yes - <Checkbox onChange={this.handleToggle} checked={this.state.socialsCheck} id="socialsCheck" />
+                                            {this.state.socialsCheck ? <p>Socials Check Confirmed</p>: <p>Socials Check Unconfirmed</p>}
                                         </List.Content>
                                     </List.Item>
                                     <List.Item>
@@ -402,7 +417,8 @@ export default class EOIDetails extends Component {
                                             <List.Header style={{ color: "#cb3538" }}>
                                                 Does the organization meet and match the key WBGS values and believes.
                                             </List.Header>
-                                            Check if yes - <Checkbox onChange={this.handleToggle} id="descCheck" />
+                                            Check if yes - <Checkbox onChange={this.handleToggle} checked={this.state.descCheck} id="descCheck" />
+                                            {this.state.descCheck ? <p>Description Check Confirmed</p>: <p>Description Check Unconfirmed</p>}
                                         </List.Content>
                                     </List.Item>
                                     <List.Item>
@@ -410,7 +426,8 @@ export default class EOIDetails extends Component {
                                             <List.Header style={{ color: "#cb3538" }}>
                                                 Is the scope and aim of the described event achievable?
                                             </List.Header>
-                                            Check if yes - <Checkbox onChange={this.handleToggle} id="targetCheck" />
+                                            Check if yes - <Checkbox onChange={this.handleToggle} checked={this.state.targetCheck} id="targetCheck" />
+                                            {this.state.targetCheck ? <p>Target Check Confirmed</p>: <p>Target Check Unconfirmed</p>}
                                         </List.Content>
                                     </List.Item>
                                     <List.Item>
@@ -418,7 +435,8 @@ export default class EOIDetails extends Component {
                                             <List.Header style={{ color: "#cb3538" }}>
                                                 Does the organization have 6-10 volunteers to chair a committee?
                                             </List.Header>
-                                            Check if yes - <Checkbox onChange={this.handleToggle} id="volunteerCheck" />
+                                            Check if yes - <Checkbox onChange={this.handleToggle} checked={this.state.volunteerCheck} id="volunteerCheck" />
+                                            {this.state.volunteerCheck ? <p>Volunteers Check Confirmed</p>: <p>Volunteers Check Unconfirmed</p>}
                                         </List.Content>
                                     </List.Item>
                                     <List.Item>
@@ -426,7 +444,8 @@ export default class EOIDetails extends Component {
                                             <List.Header style={{ color: "#cb3538" }}>
                                                 Is the requested date a reasonable to hold a WBGS?
                                             </List.Header>
-                                            Check if yes - <Checkbox onChange={this.handleToggle} id="bestDateCheck" />
+                                            Check if yes - <Checkbox onChange={this.handleToggle} checked={this.state.bestDateCheck} id="bestDateCheck" />
+                                            {this.state.bestDateCheck ? <p>Date Check Confirmed</p>: <p>Date Check Unconfirmed</p>}
                                         </List.Content>
                                     </List.Item>
                                     <List.Item>
@@ -434,7 +453,8 @@ export default class EOIDetails extends Component {
                                             <List.Header style={{ color: "#cb3538" }}>
                                                 Is the loaction is feasable to hold a WBGS?
                                             </List.Header>
-                                            Check if yes - <Checkbox onChange={this.handleToggle} id="locationCheck" />
+                                            Check if yes - <Checkbox onChange={this.handleToggle} checked={this.state.locationCheck} id="locationCheck" />
+                                            {this.state.locationCheck ? <p>Location Check Confirmed</p>: <p>Location Check Unconfirmed</p>}
                                         </List.Content>
                                     </List.Item>
                                     <List.Item>
@@ -442,7 +462,8 @@ export default class EOIDetails extends Component {
                                             <List.Header style={{ color: "#cb3538" }}>
                                                 Are Key people within the organization are able to help WBGS staff arrange the event and are authorized to make decisions?
                                             </List.Header>
-                                            Check if yes - <Checkbox onChange={this.handleToggle} id="keyInfCheck" />
+                                            Check if yes - <Checkbox onChange={this.handleToggle} checked={this.state.keyInfCheck} id="keyInfCheck" />
+                                            {this.state.keyInfCheck ? <p>key People Check Confirmed</p>: <p>Key People Check Unconfirmed</p>}
                                         </List.Content>
                                     </List.Item>
                                 </List>
@@ -462,7 +483,10 @@ export default class EOIDetails extends Component {
                     <Grid.Column>
                         <Segment floated='right' inverted style={{ textAlign: "justify", background: "#cb3538" }}>
                             <Button.Group>
-                                <Button onClick={this.handleAcptShort} color={"black"} size={"mini"} >Shortlist Candidate</Button>
+                                {this.state.shortlisted ? 
+                                 <Button onClick={this.handleRemoveShortlist} color={"black"} size={"mini"} >Remove Shortlist</Button>
+                                :<Button onClick={this.handleAcptShort} color={"black"} size={"mini"} >Shortlist Candidate</Button>
+                                }
                                 <Button inverted color="white" size={"mini"} onClick={this.handleReject}>Reject Candidate</Button>
                                 <Button color="blue" size={"mini"} onClick={this.handleUpdate}>Update Checks</Button>
                             </Button.Group>
