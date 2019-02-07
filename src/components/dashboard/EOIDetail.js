@@ -1,30 +1,28 @@
 import React, { Component } from 'react'
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 import {
     Grid,
     List,
     Segment,
-    Header,
     Form,
     Checkbox,
     Button,
-    Dropdown,
-    Label,
-    Input
 } from 'semantic-ui-react';
-import { Field, FormSpy } from "react-final-form";
+// import { Field, FormSpy } from "react-final-form";
+// import { Field, FormSpy } from "react-final-form";
+import { api } from '../../api/init';
 
 export default class EOIDetails extends Component {
 
     constructor(props) {
         super(props);
-     this.state = {
-            firstName: "Matt",
-            lastName: "Martin",
+        this.state = {
+            // firstName: "Matt",
+            // lastName: "Martin",
             email: "ouhefohOHF@gmail.com",
             organization: "organizee",
-            description: "iuhefuhwohgfowjroisiogjoijgvoiaj0jjer0gjapijgpiajivjgapivjpjvisdjvlhjslbdgj;sdjbpjapijb;pdsmpobjaepoi",
-            volunteers: 6,
+            // description: "iuhefuhwohgfowjroisiogjoijgvoiaj0jjer0gjapijgpiajivjgapivjpjvisdjvlhjslbdgj;sdjbpjapijb;pdsmpobjaepoi",
+            // volunteers: 6,
             datePicker: "around spring",
             suburb: "yo town",
             zipCode: 9000,
@@ -33,19 +31,100 @@ export default class EOIDetails extends Component {
             localCouncil: "concil tie",
             keyPeople: "my mum",
             val_council: false,
-            val_bel:false,
+            val_bel: false,
             val_org: false,
             val_place: false,
             val_date: false,
             val_social: false,
             val_scope: false,
             val_vols: false,
-            val_people:false,
-            shortlist: false
+            val_people: false,
+            shortlist: false,
+            location: [],
+            keyInfluencers: [],
+            description: '',
+            volunteers: false,
+            target: '',
+            bestTime: '',
+            councilRelationship: false,
+            councilDetails: '',
+            socials: [],
+            firstName: '',
+            lastName: '',
+            organisation: '',
+            socialsCheck: false,
+            descCheck: false,
+            volunteerCheck: false,
+            targetCheck: false,
+            locationCheck: false,
+            bestDateCheck: false,
+            keyInfCheck: false,
+            shortlisted: false,
+            denied: false,
+            deniedReason: ''
         }
     }
+
+    componentDidMount = async () => {
+        const { id } = this.props.match.params;
+        const response = await api.get(`/dashboard/${id}`);
+        const {
+            location,
+            keyInfluencers,
+            description,
+            volunteers,
+            target_value: target,
+            best_time: bestTime,
+            local_council_relationship: councilRelationship,
+            local_council_details: councilDetails,
+            host: {
+                socials,
+                first_name: firstName,
+                last_name: lastName,
+                organisation
+            },
+            criteria: {
+                socials_check: socialsCheck,
+                description_check: descCheck,
+                volunteers_check: volunteerCheck,
+                target_value_check: targetCheck,
+                location_check: locationCheck,
+                best_date_check: bestDateCheck,
+                key_influencers_check: keyInfCheck,
+                shortlisted,
+                denied,
+                denied_reason: deniedReason
+            }
+        } = response.data
+        this.setState({
+            location,
+            keyInfluencers,
+            description,
+            volunteers,
+            target,
+            bestTime,
+            councilRelationship,
+            councilDetails,
+            socials,
+            firstName,
+            lastName,
+            organisation,
+            socialsCheck,
+            descCheck,
+            volunteerCheck,
+            targetCheck,
+            locationCheck,
+            bestDateCheck,
+            keyInfCheck,
+            shortlisted,
+            denied,
+            deniedReason
+        });
+
+    }
+
     handleAcptShort = () => {
-        if( this.state.val_council &&
+        if (this.state.val_council &&
             this.state.val_bel &&
             this.state.val_org &&
             this.state.val_place &&
@@ -54,8 +133,8 @@ export default class EOIDetails extends Component {
             this.state.val_scope &&
             this.state.val_vols &&
             this.state.val_people == true) {
-        this.setState({shortlist: !this.state.shortlist})
-            }
+            this.setState({ shortlist: !this.state.shortlist })
+        }
     }
 
     handleToggle = (evt) => {
@@ -95,28 +174,28 @@ export default class EOIDetails extends Component {
         this.setState(newState)
     }
 
-        render() {
-            console.log('Hello from Confirm Form', this.props)
-            const { handleSubmit, prevStep } = this.props;
-            const { values } = this.state;
+    render() {
+        console.log('Hello from Confirm Form', this.props)
+        const { handleSubmit, prevStep } = this.props;
+        const { values } = this.state;
 
-            if (!this.state) return null;
-            const { firstName,
-                lastName,
-                email,
-                organization,
-                description,
-                volunteers,
-                datePicker,
-                suburb,
-                zipCode,
-                country,
-                council,
-                localCouncil,
-                keyPeople } = this.state;
-            return (
-                <div className="form-grid">
-                    <Grid textAlign='center' className="form-grid1">
+        if (!this.state) return null;
+        const { firstName,
+            lastName,
+            email,
+            organization,
+            description,
+            volunteers,
+            datePicker,
+            suburb,
+            zipCode,
+            country,
+            council,
+            localCouncil,
+            keyPeople } = this.state;
+        return (
+            <div className="form-grid">
+                <Grid textAlign='center' className="form-grid1">
                     <Grid.Column>
                         <Segment inverted style={{ textAlign: "justify" }}>
                             <Form>
@@ -136,7 +215,7 @@ export default class EOIDetails extends Component {
                                             </List.Header>
                                             {lastName}
                                         </List.Content>
-                                        
+
                                     </List.Item>
                                     <List.Item>
                                         <List.Content>
@@ -233,7 +312,7 @@ export default class EOIDetails extends Component {
                 </Grid>
                 <Grid textAlign='center' className="form-grid2">
                     <Grid.Column>
-                        <Segment inverted style={{ textAlign: "justify", background:"grey"}}>
+                        <Segment inverted style={{ textAlign: "justify", background: "grey" }}>
                             <Form>
                                 <List divided inverted relaxed>
                                     <List.Item>
@@ -241,7 +320,7 @@ export default class EOIDetails extends Component {
                                             <List.Header style={{ color: "#cb3538" }}>
                                                 Does the individual meet and match the key WBGS values and believes.
                                                 </List.Header>
-                                            Check if yes - <Checkbox onChange={this.handleToggle} id="chk_social"/>
+                                            Check if yes - <Checkbox onChange={this.handleToggle} id="chk_social" />
                                         </List.Content>
                                     </List.Item>
                                     <List.Item>
@@ -249,7 +328,7 @@ export default class EOIDetails extends Component {
                                             <List.Header style={{ color: "#cb3538" }}>
                                                 Does the organization meet and match the key WBGS values and believes.
                                             </List.Header>
-                                            Check if yes - <Checkbox onChange={this.handleToggle} id="chk_bel"/>
+                                            Check if yes - <Checkbox onChange={this.handleToggle} id="chk_bel" />
                                         </List.Content>
                                     </List.Item>
                                     <List.Item>
@@ -257,7 +336,7 @@ export default class EOIDetails extends Component {
                                             <List.Header style={{ color: "#cb3538" }}>
                                                 Has the organization been reviewed?
                                             </List.Header>
-                                            Check if yes - <Checkbox onChange={this.handleToggle} id="chk_org"/>
+                                            Check if yes - <Checkbox onChange={this.handleToggle} id="chk_org" />
                                         </List.Content>
                                     </List.Item>
                                     <List.Item>
@@ -265,7 +344,7 @@ export default class EOIDetails extends Component {
                                             <List.Header style={{ color: "#cb3538" }}>
                                                 Is the scope and aim of the described event achievable?
                                             </List.Header>
-                                            Check if yes - <Checkbox onChange={this.handleToggle} id="chk_scope"/>
+                                            Check if yes - <Checkbox onChange={this.handleToggle} id="chk_scope" />
                                         </List.Content>
                                     </List.Item>
                                     <List.Item>
@@ -273,7 +352,7 @@ export default class EOIDetails extends Component {
                                             <List.Header style={{ color: "#cb3538" }}>
                                                 Does the organization have 6-10 volunteers to chair a committee?
                                             </List.Header>
-                                            Check if yes - <Checkbox onChange={this.handleToggle} id="chk_vols"/>
+                                            Check if yes - <Checkbox onChange={this.handleToggle} id="chk_vols" />
                                         </List.Content>
                                     </List.Item>
                                     <List.Item>
@@ -281,15 +360,15 @@ export default class EOIDetails extends Component {
                                             <List.Header style={{ color: "#cb3538" }}>
                                                 Is the requested date a reasonable to hold a WBGS?
                                             </List.Header>
-                                            Check if yes - <Checkbox onChange={this.handleToggle} id="chk_date"/>
+                                            Check if yes - <Checkbox onChange={this.handleToggle} id="chk_date" />
                                         </List.Content>
                                     </List.Item>
                                     <List.Item>
                                         <List.Content>
                                             <List.Header style={{ color: "#cb3538" }}>
-                                            Is the loaction is feasable to hold a WBGS?
+                                                Is the loaction is feasable to hold a WBGS?
                                             </List.Header>
-                                            Check if yes - <Checkbox onChange={this.handleToggle} id="chk_place"/>
+                                            Check if yes - <Checkbox onChange={this.handleToggle} id="chk_place" />
                                         </List.Content>
                                     </List.Item>
                                     <List.Item>
@@ -297,7 +376,7 @@ export default class EOIDetails extends Component {
                                             <List.Header style={{ color: "#cb3538" }}>
                                                 The potential hosts relationship with local Council will allow them to arrange an event?
                                             </List.Header>
-                                            Check if yes - <Checkbox onChange={this.handleToggle} id="chk_council"/>
+                                            Check if yes - <Checkbox onChange={this.handleToggle} id="chk_council" />
                                         </List.Content>
                                     </List.Item>
                                     <List.Item>
@@ -305,7 +384,7 @@ export default class EOIDetails extends Component {
                                             <List.Header style={{ color: "#cb3538" }}>
                                                 Are Key people within the organization are able to help WBGS staff arrange the event and are authorized to make decisions?
                                             </List.Header>
-                                            Check if yes - <Checkbox onChange={this.handleToggle} id="chk_people"/>
+                                            Check if yes - <Checkbox onChange={this.handleToggle} id="chk_people" />
                                         </List.Content>
                                     </List.Item>
                                 </List>
@@ -315,23 +394,23 @@ export default class EOIDetails extends Component {
                 </Grid>
                 <Grid className="form-grid3">
                     <Grid.Column>
-                        <Segment inverted style={{ textAlign: "justify", background:"#FFFFFF"}}>
-                            <img src={ this.state.shortlist ? "./Assets/WBGS-logo.png":"./Assets/WBGS-logo dulled.png" } className= "wbgs-logo"/>
+                        <Segment inverted style={{ textAlign: "justify", background: "#FFFFFF" }}>
+                            <img src={this.state.shortlist ? "./Assets/WBGS-logo.png" : "./Assets/WBGS-logo dulled.png"} className="wbgs-logo" />
                         </Segment>
                     </Grid.Column>
                 </Grid>
                 <Grid className="form-grid4">
                     <Grid.Column>
-                        <Segment floated='right' inverted style={{ textAlign: "justify", background:"#cb3538"}}>
+                        <Segment floated='right' inverted style={{ textAlign: "justify", background: "#cb3538" }}>
                             <Button.Group>
-                                <Button onClick={ this.handleAcptShort } color={"black"} size={"massive"} >Shortlist Candidate</Button>
+                                <Button onClick={this.handleAcptShort} color={"black"} size={"massive"} >Shortlist Candidate</Button>
                                 <Button inverted color="white" size={"massive"}>Reject Candidate</Button>
                             </Button.Group>
                         </Segment>
                     </Grid.Column>
                 </Grid>
-                </div>
-               
-            )
-        }
+            </div>
+
+        )
     }
+}

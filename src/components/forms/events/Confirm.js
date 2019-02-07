@@ -27,18 +27,6 @@ import { getFormState } from "../../../redux/reducers/reduxFormReducer";
 
 class Confirm extends Component {
 
- confirmSubmit = values => {
-  // e.preventDefault();
-  // showResults(values);
-  // Process your form i.e. send data to API
- }
-
- // Go back to previous page
- // back = e => {
- //  e.preventDefault();
- //  this.props.prevStep();
- // }onClick={this.confirmSubmit}
-
  render() {
    const { handleSubmit, submitting, prevStep} = this.props;
    const { values, invalid, hasValidationErrors } = this.props.state;
@@ -49,9 +37,9 @@ class Confirm extends Component {
           last_name,
           email,
           organisation,
-          socials,
           description,
           target_value,
+          socials,
           volunteers,
           best_time,
           suburb,
@@ -64,7 +52,6 @@ class Confirm extends Component {
    <Grid textAlign='center' >
     <Grid.Column width={10}>
       <Segment inverted style={{ textAlign: "justify", padding: 20 }}>
-      {/* <FormStateToRedux form="confirmForm" /> */}
        <Form onSubmit={handleSubmit}>
        <List divided inverted relaxed>
         
@@ -81,7 +68,7 @@ class Confirm extends Component {
          <List.Content>
           <List.Header style={{ color: "teal" }}>
            Last Name
-                      </List.Header>
+          </List.Header>
           {last_name}
          </List.Content>
         </List.Item>
@@ -99,6 +86,14 @@ class Confirm extends Component {
            Your Organization Name
           </List.Header>
           {organisation}
+         </List.Content>
+        </List.Item>
+        <List.Item>
+         <List.Content>
+          <List.Header style={{ color: "teal" }}>
+           Your Social Media Link(s)
+          </List.Header>
+          {socials && <h6>{socials.map(s=> s.name)}</h6>}
          </List.Content>
         </List.Item>
 

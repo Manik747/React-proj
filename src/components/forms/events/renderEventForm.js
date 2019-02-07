@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormSpy } from "react-final-form";
+// import { FormSpy } from "react-final-form";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import HostDetailsForm from "./hostDetailsForm";
@@ -8,11 +8,9 @@ import CommunityDetailsForm from "./yourCommunityForm";
 import ConfirmDetailsForm from "./Confirm";
 
 const CollectUserDetailsForm = (props) => {
-  const { onSubmit, handleSubmit, mutators: { push, pop }, values, pristine, submitting, invalid,form, hasSubmitErrors, submitErrors, nextStep, prevStep, page, ...rest } = props;
-  console.log("hasValidationErrors", props);
-  //  console.log("hasValidationErrors", invalid, pristine, submitting);
+  const { onSubmit, handleSubmit, values, pristine, submitting, invalid,form, hasSubmitErrors, submitErrors, nextStep, prevStep, page, ...rest } = props;
+  
   return (
-    // <form onSubmit={handleSubmit}>
     <div>
       <CSSTransition key={'page=0'} in={true} appear timeout={4500} classNames="fade">
         <HostDetailsForm form={form} onSubmit={onSubmit} handleSubmit={handleSubmit} values={values} pristine={pristine} submitting={submitting} invalid={invalid} nextStep={nextStep} prevStep={prevStep} page={page} {...rest} />

@@ -1,8 +1,13 @@
-import {Grid, Cell} from 'react-mdl'
+// import {Grid, Cell} from 'react-mdl'
 import React, { Component } from 'react'
+<<<<<<< HEAD
 import { Link } from 'react-router-dom'
 import { Button } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
+=======
+// import { Link } from 'react-router-dom'
+import { Button,Image } from 'semantic-ui-react'
+>>>>>>> ca47daf7f835cc7ed0542041761c626473a8810d
 
 
 export default class InfoPg extends Component {

@@ -34,7 +34,7 @@ class Authentication extends Component {
         console.log('props errors logging in', this.props.error)
         let flash = false;
         if (error) flash = error.response;
-        console.log('props errors logging in', flash.data)
+        console.log('props errors logging in', flash)
 
         return (
             <Fragment>

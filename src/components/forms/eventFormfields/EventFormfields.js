@@ -1,7 +1,7 @@
 import React from 'react'
 import { Form, Label, TextArea, Input, Checkbox, Popup } from "semantic-ui-react";
 import "../../../app/App.css";
-import { List, Button } from 'semantic-ui-react';
+import { List, } from 'semantic-ui-react';
 import { Field } from "react-final-form";
 
 const style = {
@@ -10,7 +10,7 @@ const style = {
 };
 
 export const InputText = (props) => {
-  const { placeholder, position, icon, iconPosition, type, input, meta: {name, active, error, touched } } = props;
+  const { placeholder, position, icon, iconPosition, type, input, meta: {name, active, error, } } = props;
  return (
    <div className={active ? 'active' : ''}>
     <Popup 

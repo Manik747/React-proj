@@ -16,15 +16,13 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import LandingPg from "../components/pages/LandingPage/LandingPg";
 import InfoPg from "../components/pages/LandingPage/InfoPg"
-import EOIDetails from "../components/dashboard/EOIDetail"
+import EOIDetail from "../components/dashboard/EOIDetail"
 import AdminDashboard from "../components/dashboard/AdminDashboard"
 import { getSessionAuthToken} from "../redux/actions/authenticateUserAction";
 
 class App extends Component {
-  componentDidMount() {
-    this.props.getSessionAuthToken("AuthToken");
-  }
-render() {
+
+  render() {
     const { loggedIn, userRole } = this.props;
     console.log('loggedIn, userRole', loggedIn, userRole);
 
@@ -37,10 +35,15 @@ render() {
                 <Nav />
                 <Switch>
                   <Route exact path="/" component={LandingPg} />
-                  <Route path="/details" component={EOIDetails} />
-                  {loggedIn && userRole === "admin" && (
-                    <Route path="/dashboard/" component={AdminDashboard} />
-                  )}
+                  {
+                    loggedIn && userRole === 'admin' &&
+                    <Route exact path="/dashboard" component={AdminDashboard} />
+                  }
+                  {
+                    loggedIn && userRole === 'admin' &&
+                    <Route path="/dashboard/:id" component={EOIDetail} />
+                  }
+
                   <Route path="/about" component={About} />
                   <Route path="/create" component={CreateEventForm} />
                   <Route
