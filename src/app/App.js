@@ -10,15 +10,18 @@ import About from "../components/pages/About";
 import CreateEventForm from "../components/forms/events/EventForm";
 import Authentication from "../components/auth/Authentication";
 import LandingPg from "../components/pages/LandingPage/LandingPg";
+<<<<<<< HEAD
 import EOIDetails from "../components/dashboard/EOIDetail"
+=======
+import InfoPg from "../components/pages/LandingPage/InfoPg"
+import EOIDetail from "../components/dashboard/EOIDetail"
+>>>>>>> 06e12ad5027c85d623b20432211be36e2fdc413f
 import AdminDashboard from "../components/dashboard/AdminDashboard"
 import { getSessionAuthToken} from "../redux/actions/authenticateUserAction";
 
 class App extends Component {
-  componentDidMount() {
-    this.props.getSessionAuthToken("AuthToken");
-  }
-render() {
+
+  render() {
     const { loggedIn, userRole } = this.props;
     console.log('loggedIn, userRole', loggedIn, userRole);
 
@@ -31,10 +34,15 @@ render() {
                 <Nav />
                 <Switch>
                   <Route exact path="/" component={LandingPg} />
-                  <Route path="/details" component={EOIDetails} />
-                  {loggedIn && userRole === "admin" && (
-                    <Route path="/dashboard/" component={AdminDashboard} />
-                  )}
+                  {
+                    loggedIn && userRole === 'admin' &&
+                    <Route exact path="/dashboard" component={AdminDashboard} />
+                  }
+                  {
+                    loggedIn && userRole === 'admin' &&
+                    <Route path="/dashboard/:id" component={EOIDetail} />
+                  }
+
                   <Route path="/about" component={About} />
                   <Route path="/create" component={CreateEventForm} />
                   <Route
