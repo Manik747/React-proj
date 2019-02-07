@@ -36,7 +36,7 @@ html {
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 1;
-    font-size: 2em;
+    font-size: 1.9em;
     text-align: center;
     padding: 20px;
     font-weight: 500;
@@ -49,7 +49,7 @@ html {
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 1;
-    font-size: 3em;
+    font-size: 1em;
     text-align: center;
     justify-self: center;
     align-self: center;
@@ -59,7 +59,7 @@ html {
 .info-grid {
     display: grid;
     grid-template-columns: 12.5% 25% 25% 25% 12.5%;
-    grid-template-rows: 50vh
+    grid-template-rows: 500px;
 }
 
 .people {
@@ -79,11 +79,6 @@ h1 {
     font-family: 'Montserrat', sans-serif;
 }
 
-<<<<<<< HEAD
-
-=======
-ul {}
->>>>>>> ca47daf7f835cc7ed0542041761c626473a8810d
 
 .enviroment {
     grid-column-start: 3;

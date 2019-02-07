@@ -23,7 +23,7 @@ class AdminDashboard extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { data: [], };
+    this.state = { data: [], pages: 0};
   }
 
   componentDidMount() {
@@ -34,7 +34,8 @@ class AdminDashboard extends Component {
     })
       .then(response => {
           console.log('data: response.data.data', response.data.data)
-          this.setState({ data: response.data.data })
+          this.setState({ data: response.data.data, pages: response.data.count})
+          console.log(response.data)
     });
   }
   handleSeeShortlist = event =>{
@@ -63,63 +64,37 @@ class AdminDashboard extends Component {
     const { events, loggedIn, sessionLogIn, role } = this.props;
     // Pagination
     const per_page = 5; //FOR TESTING PURPOSES ONLY & IS TO BE REPLACED
-    const pages = Math.ceil(events.length / per_page);
+    // const pages = Math.ceil(events.length / per_page);// this.state
+    const pages = Math.ceil(this.state.pages/per_page);
     const current_page = this.props.page;
     const start_offset = (current_page - 1) * per_page;
     let start_count = 0;
 
-    const buildcards2 = this.state.data.map((Data) =>
-     <React.Fragment>
-       <Card.Group centered>
-         <Card color="red" fluid > 
-           <Card.Content color="red"  >
-              <input  type="hidden" value={Data._id}></input>
-              <Card.Header key={Data.first_name} >{Data.host.first_name}</Card.Header>
-              <Card.Meta key={Data.createdAt}>{Data.createdAt}</Card.Meta>
-              <Card.Description key={Data.organisation}>{Data.host.organisation}</Card.Description>
-              <Button animated inverted color="red">
-              <Button.Content visible>VIEW</Button.Content>
-              <Button.Content hidden>
-                  <Icon name='arrow right' />
-              </Button.Content>
-              </Button>
-              <div>
-              {Data.criteria.shortlisted ? (<Image floated='right' size='mini' src='/Assets/WBGS-logo.png' />):
-              (<Image floated='right' size='mini' src='/Assets/WBGS-logo dulled.png' />)}
-              </div>
-          </Card.Content>
-         </Card>
-       </Card.Group>
-     </React.Fragment>)
-
     
     // Render
-    const buildCards = events.map((Data, index) => {
+    const buildCards = this.state.data.map((Data, index) => {
       if (index >= start_offset && start_count < per_page) {
         start_count++;
         return (
           <Card.Group key={index} centered>
             <Card color="red" fluid>
-              <Card.Content color="red">
+              <Card.Content color="red" className= "cardContainer">
                 <input type="hidden" value={Data.id} />
-                <Card.Header key={index}>{Data["title"]}</Card.Header>
+                <Card.Header key={index}>{Data.host.first_name}</Card.Header>
                 <Card.Meta key={Data.createdAt}>{Data.createdAt}</Card.Meta>
                 <Card.Description>
-                  {Data["body"].slice(0, 70) + "..."}
+                  {Data.host.organisation}
                 </Card.Description>
-                <Button
-                  style={{ marginTop: "15px" }}
-                  animated
-                  inverted
-                  color="red"
-                >
-                  <Button.Content visible>VIEW</Button.Content>
-                  <Button.Content hidden>
-                    <Icon name="arrow right" />
-                  </Button.Content>
+                <Button  className="viewButton" as={Link} animated inverted color="red" to={`/dashboard/${Data._id}`} id={Data._id}>
+                <Button.Content visible >VIEW</Button.Content>
+                <Button.Content hidden>
+                <Icon name='arrow right' />
+                </Button.Content>
                 </Button>
+
                 <div>
-                  {Data.shortlisted ? (
+                    
+                  {Data.criteria.shortlisted ? (
                     <Image
                       floated="right"
                       size="mini"
