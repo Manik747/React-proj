@@ -59,6 +59,16 @@ Heroku for Client and Server, MLabs for Database
 [WBGS Project Charter](\docs\project_charter.pdf)
 
 ### Screenshots of Final Application
+![Home Page Top](/docs/img/application_screenshots/homeTop.png)
+![Home Page Top](/docs/img/application_screenshots/homeCentre.png)
+![Home Page Top](/docs/img/application_screenshots/homeBottom.png)
+![Home Page Top](/docs/img/application_screenshots/eoiForm1.png)
+![Home Page Top](/docs/img/application_screenshots/eoiForm2.png)
+![Home Page Top](/docs/img/application_screenshots/eoiForm3.png)
+![Home Page Top](/docs/img/application_screenshots/confirmation_submission.JPG)
+![Home Page Top](/docs/img/application_screenshots/dashboard.png)
+![Home Page Top](/docs/img/application_screenshots/dasboardView.png)
+
 
 ### Handover (incl. Satisfaction questionnaire)
 [Handover Document](\docs\handover.pdf)
