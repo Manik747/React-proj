@@ -28,11 +28,11 @@ class AdminDashboard extends Component {
 
   componentDidMount() {
     console.log('ComponentDidMount')    
-      api.get("/dashboard?pageNum=1&limit=10")
-      .then(response => {
-          console.log('data: response.data.data', response.data.data)
-          this.setState({ data: response.data.data })
-    });
+    //   api.get("/dashboard?pageNum=1&limit=10")
+    //   .then(response => {
+    //       console.log('data: response.data.data', response.data.data)
+    //       this.setState({ data: response.data.data })
+    // });
   }
   handleSeeShortlist = event =>{
     event.preventDefault()
@@ -46,7 +46,7 @@ class AdminDashboard extends Component {
             .then((response) => this.setState({ data: response.data.data }))
   }
 
-  handlePaginationChange = (page) => {
+  handlePaginationChange = (evt, page) => {
     const { loadEventsList, history, eventLoadError } = this.props;
     if (eventLoadError) return;
     loadEventsList(page);
@@ -186,8 +186,8 @@ class AdminDashboard extends Component {
 
 const mapStateToProps = (state, ownProps) => ({
   events: state.events.eventsList,
-  page: Number(ownProps.location.search.split('=')[1]) || 1,
   eventLoadError: state.events.eventError,
+  page: Number(ownProps.location.search.split('=')[1]) || 1,
 });
 
 export default withRouter(
@@ -196,3 +196,17 @@ export default withRouter(
     { fetchEventsList, loadEventsList, }
   )(AdminDashboard)
 );
+
+
+//const mapStateToProps = (state, location) => {
+//     console.log("state | Location", state, location);
+//     console.log("location.location.search.split('='[1]): ", location.location);
+//     const page = location.location.search.split('=')[1];
+//    return {
+//       events: state.events.eventsList, 
+//       eventLoadError: state.events.eventError,
+//       page: Number(page) || 1,
+//     //   dispatch:
+//     };    
+// } 
+
