@@ -134,7 +134,7 @@ Used Trello labels and dates to estimate:
  * Task Completion Dates
  
 ### Trello Board Screenshots
-[Trello Boards](/docs/img/trello screen caps)
+[Trello Boards](/docs/img/trello_screen_caps)
 
 The Trello board can also be seen in full at: https://trello.com/b/dNKT0C4a/real-world-react-app
 
