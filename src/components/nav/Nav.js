@@ -47,16 +47,7 @@ class Nav extends Component {
                 >
                     <Icon name='home' />HOME
                 </Menu.Item>
-                <Menu.Item
-                    as={NavLink} to='/about'
-                    name='about'
-                    active={activeItem === 'info'}
-                    onClick={this.handleItemClick}
-                    activeClassName="active red"
-                    style={dodgerRed}
-                >
-                    <Icon name='info' />ABOUT
-                </Menu.Item>
+                
                 {loggedIn && userRole === 'admin' &&
                     <Menu.Item
                         as={NavLink} to='/dashboard'
@@ -71,7 +62,7 @@ class Nav extends Component {
                 }
 
                 <Menu.Item
-                    position='right'
+                    position='left'
                     as={NavLink} to='/create'
                     name='create'
                     active={activeItem === 'add'}
