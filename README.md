@@ -49,16 +49,19 @@ MongoDb
 #### Deployment Platforms: 
 Heroku for Client and Server, MLabs for Database
 
-### Project Charter
-[WBGS Project Charter](\docs\Project Charter - WBGS.pdf)
+### Initial Client Consultation
+[Initial Consultation](\docs\initial_consult_client_questionnaire.pdf)
 
 ### Client Diary
-[Client Diary](\docs\WBGS App - Client Diary.pdf)
+[Client Diary](\docs\client_diary.pdf)
+
+### Project Charter
+[WBGS Project Charter](\docs\project_charter.pdf)
 
 ### Screenshots of Final Application
 
 ### Handover (incl. Satisfaction questionnaire)
-[Handover Document](\docs\WBGS - Handover.pdf)
+[Handover Document](\docs\handover.pdf)
 Note: Questionnaire Pending
 
 ### Instructions for Use
@@ -86,19 +89,19 @@ Note: Questionnaire Pending
 
 ## Design Documentation
 ### User Journey / Flow Diagram 
-[WBGS User Journey Diagram](\docs\img\WBGS Workflow _User Journey.jpg)
+[WBGS User Journey Diagram](\docs\img\wbgs_user_journey.jpg)
 
 ### OOP / Components
-[WBGS OOP / Components List](\docs\WBGS - OOP_ Components .pdf)
+[WBGS OOP / Components List](\docs\oop_components.pdf)
 
 ### Wire-Frames
 [WBGS Wireframes](\docs\img\wireframes)
 
 ### Data Flow
-[WBGS Data Flow Diagraams](\docs\img\WBGS Dataflows.jpg)
+[WBGS Data Flow Diagraams](\docs\img\wbgs_datflow.jpg)
 
 ### ERD
-[WBGS ERD](\docs\img\WBGS App - ERD.png)
+[WBGS ERD](\docs\img\wbgs_erd.png)
 
 ## Details of Project Management and Planning Process
 ### Project Sprints
@@ -107,7 +110,7 @@ The Project was divided into two sprints of a week each:
  - 2nd - Dashboard
  
 ### Project Planning Document
-[Project Planning](\docs\WBGS -Project Planning Phase.pdf)
+[Project Planning](\docs\project_planning.pdf)
 
 ### White Boarding / Brainstorming Photos
 [Brainstorming](\docs\img\planning)
