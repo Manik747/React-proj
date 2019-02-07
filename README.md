@@ -111,9 +111,9 @@ Each contributor had their own fork of the pristine master branch, and checked o
 Completed feature branches were submitted for code review by at least two other contributors before a merge back into the master branch was allowed.
 
 ### Testing
- * Automated / Unit Tests - To be performed
+ * Automated / Unit Tests - To be performed - had problems getting Jest & Mocha working with app
  * Regression Tests - To be performed
- * Integration Tests - To be performed
+ * Integration Tests - To be performed  - had problems getting Jest & Mocha working with app
  
 ### Post Project Review
 #### What did we enjoy?
@@ -166,134 +166,129 @@ Three high-level areas of software quality, and some aspects within each are con
 ### What are the libraries being used in the app, and why?
 ### Answer:
 
-Library Name
-Description / 
-Reason for use
-Git repository /
-API Reference 
-Backend
-@sendgrid/mail
-A dedicated service for sending emails from node.js apps
-Used in this application to send emails to applicants and to WBGS after an expression of interest has been submitted, and also to email denied applicants
+#### Backend
+##### @sendgrid/mail 
+* A dedicated service for sending emails from node.js apps 
+* Used in this application to send emails to applicants and to WBGS after an expression of interest has been submitted, and also to email denied applicants 
+https://github.com/sendgrid/sendgrid-nodejs/tree/master/packages/mail
 
-https://github.com/sendgrid/sendgrid-nodejs/tree/master/packages/mail 
-cors
-A node.js package for which provides express middleware that can be used to enable cors
-Used to enable connection between the front-end and back-end of the application
-
+##### cors
+* A node.js package for which provides express middleware that can be used to enable cors
+* Used to enable connection between the front-end and back-end of the application
 https://github.com/expressjs/cors 
-debug
-Default express generator library
-Customises console messages
-Currently only used in default modules created by express generator
 
+##### debug
+* Default express generator library
+* Customises console messages
+* Currently only used in default modules created by express generator
 https://github.com/visionmedia/debug 
-dotenv
-Loads environment variables from .env for node.js projects.
-Used for storing secure variables for the application
 
+##### dotenv
+* Loads environment variables from .env for node.js projects.
+* Used for storing secure variables for the application
 https://github.com/motdotla/dotenv 
-ejs
-Embedded javascript templating library
-Used in the application to compose html strings to be sent as emails from the server
 
+##### ejs
+* Embedded javascript templating library
+* Used in the application to compose html strings to be sent as emails from the server
 https://github.com/mde/ejs 
-express
-A web framework for node.js
-Used as the server architecture for the application
 
+##### express
+* A web framework for node.js
+* Used as the server architecture for the application
 http://expressjs.com/ 
-express-acl
-An express module which allows the use of “Access Control Lists”
-Used in the application for access routing for users with authorised roles (eg. admin access to dashboard)
 
+##### express-acl
+* An express module which allows the use of “Access Control Lists”
+* Used in the application for access routing for users with authorised roles (eg. admin access to dashboard)
 https://github.com/nyambati/express-acl 
-express-session
-Session middleware for express
-Used in the application in conjunction with passport to manage user authentication
 
+##### express-session
+* Session middleware for express
+* Used in the application in conjunction with passport to manage user authentication
 https://github.com/expressjs/session 
-http-errors
-Default express generator library
-Allows for easy creation of HTTP errors in express
-Used in default modules created by express generator, and minor error handling in the application
 
+##### http-errors
+* Default express generator library
+* Allows for easy creation of HTTP errors in express
+* Used in default modules created by express generator, and minor error handling in the application
 https://github.com/jshttp/http-errors 
-joi
-Allows for the creation of object schemas for validation
-Used in the application to sanitise and validate data being submitted to the database
 
+##### joi
+* Allows for the creation of object schemas for validation
+* Used in the application to sanitise and validate data being submitted to the database
 https://github.com/hapijs/joi 
-mongoose
-An abstraction layer for mongoDB which allows for elegant object modelling in node.js
-Used in the application to define schemas and to issue data queries to the database
 
+##### mongoose
+* An abstraction layer for mongoDB which allows for elegant object modelling in node.js
+* Used in the application to define schemas and to issue data queries to the database
 https://mongoosejs.com/docs/guide.html 
-morgan
-Provides helpful HTTP logging middleware for node.js
-Used in the application development environment for debugging and console messaging
 
+##### morgan
+* Provides helpful HTTP logging middleware for node.js
+* Used in the application development environment for debugging and console messaging
 https://github.com/expressjs/morgan 
-passport
-An authentication middleware for node.js
-Used as the user authentication backbone in the application, with additional dependencies on express-session, and passport-local-mongoose
 
+##### passport
+* An authentication middleware for node.js
+* Used as the user authentication backbone in the application, with additional dependencies on express-session, and passport-local-mongoose
 http://www.passportjs.org/docs/downloads/html/ 
-passport-local-mongoose
-A mongoose plugin that simplifies user authentication with passport
-Used in the application in conjunction with passport to manage user authentication
 
+##### passport-local-mongoose
+* A mongoose plugin that simplifies user authentication with passport
+* Used in the application in conjunction with passport to manage user authentication
 https://github.com/saintedlama/passport-local-mongoose 
-mocha
-Javascript test framework
-Used on back-end of the application for unit testing
 
+##### mocha
+* Javascript test framework
+* Used on back-end of the application for unit testing
 https://mochajs.org/ 
-superagent
-HTTP request library
-Used in the application in conjunction with supertest for instantiating authentication in testing environment
 
+##### superagent
+* HTTP request library
+* Used in the application in conjunction with supertest for instantiating authentication in testing environment
 https://github.com/visionmedia/superagent 
-supertest
-HTTP request test library
-Used in the application to test routing
 
+##### supertest
+* HTTP request test library
+* Used in the application to test routing
 https://github.com/visionmedia/supertest 
-Frontend
-React-Semantic
-A Simple Styling library great for buttons
+
+#### Frontend
+##### React-Semantic
+* A Simple Styling library great for buttons
 
 
-Redux
-A program that allows React to have a global state
+##### Redux
+* A program that allows React to have a global state
 
 
-React Router Dom
-Program for routing component to App to render
+##### React Router Dom
+* Program for routing component to App to render
 
 
-React-transition
-A styling library with simple animations that can be applied to components
+##### React-transition
+* A styling library with simple animations that can be applied to components
 
 
-YouTube-ui
-Helps render Iframes in components
+##### YouTube-ui
+* Helps render Iframes in components
 
 
-React-router-last-location
-Extension of React router that allows the previously rendered component to re-render
+##### React-router-last-location
+* Extension of React router that allows the previously rendered component to re-render
 
 
-Prop-types
-Allows for validation of information received into components
+##### Prop-types
+* Allows for validation of information received into components
 
 
-Final-form-arrays
-A simple styling library for forms
+##### Final-form-arrays
+* A simple styling library for forms
 
 
-Redux-thunk
-An extension of Redux which adds some functionality
+##### Redux-thunk
+* An extension of Redux which adds some functionality
 
 
 
