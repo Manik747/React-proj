@@ -26,6 +26,16 @@
  * Functionality & Features 
  * Application is able to take expressions of interest and submit data to a mailer and a database
  * Dashboard is available to view expressions of interest
+ 
+### Functionality & Features 
+The landing page makes use of videos, quotes, statistics and buttons that are highlighted . This is to draw potential host in and have them submit a expression of interest.
+
+Application is able to take expressions of interest and submit data to a mailer and a database. User who submitted the form is sent a confirmation email and wgbs is sent and email with the data submitted.
+
+Dashboard is available to view expressions of interest ,dashboard displays cards with each eoi printed out on them. Only the hosts name, organisation and date of the eoi is displayed on the cards. There is also a view button on each card that takes the eoi id  and sends  it through the router to the next section of dashboard which is the dashboard view. There is also a filter option to filter what eoi’s are displayed if they are either shortlisted or not.
+
+Dashboard view is where the eoi’s data is fetched from the db and displayed to admin. There is a checklist along side the information that is there to check off if potential host meet wbgs criteria. Eois can be updated - shortlisted  and rejected. If an eoi is rejected the admin is prompt for a denial reason  which is then sent via email to candidate who submitted eoi explaining there rejection.
+
 
 ### Tech. Stack
 #### Front-End: 
@@ -170,11 +180,13 @@ Three high-level areas of software quality, and some aspects within each are con
 ##### @sendgrid/mail 
 * A dedicated service for sending emails from node.js apps 
 * Used in this application to send emails to applicants and to WBGS after an expression of interest has been submitted, and also to email denied applicants 
+
 https://github.com/sendgrid/sendgrid-nodejs/tree/master/packages/mail
 
 ##### cors
 * A node.js package for which provides express middleware that can be used to enable cors
 * Used to enable connection between the front-end and back-end of the application
+
 https://github.com/expressjs/cors 
 
 ##### debug
@@ -186,111 +198,129 @@ https://github.com/visionmedia/debug
 ##### dotenv
 * Loads environment variables from .env for node.js projects.
 * Used for storing secure variables for the application
+
 https://github.com/motdotla/dotenv 
 
 ##### ejs
 * Embedded javascript templating library
 * Used in the application to compose html strings to be sent as emails from the server
+
 https://github.com/mde/ejs 
 
 ##### express
 * A web framework for node.js
 * Used as the server architecture for the application
+
 http://expressjs.com/ 
 
 ##### express-acl
 * An express module which allows the use of “Access Control Lists”
 * Used in the application for access routing for users with authorised roles (eg. admin access to dashboard)
+
 https://github.com/nyambati/express-acl 
 
 ##### express-session
 * Session middleware for express
 * Used in the application in conjunction with passport to manage user authentication
+
 https://github.com/expressjs/session 
 
 ##### http-errors
 * Default express generator library
 * Allows for easy creation of HTTP errors in express
 * Used in default modules created by express generator, and minor error handling in the application
+
 https://github.com/jshttp/http-errors 
 
 ##### joi
 * Allows for the creation of object schemas for validation
 * Used in the application to sanitise and validate data being submitted to the database
+
 https://github.com/hapijs/joi 
 
 ##### mongoose
 * An abstraction layer for mongoDB which allows for elegant object modelling in node.js
 * Used in the application to define schemas and to issue data queries to the database
+
 https://mongoosejs.com/docs/guide.html 
 
 ##### morgan
 * Provides helpful HTTP logging middleware for node.js
 * Used in the application development environment for debugging and console messaging
+
 https://github.com/expressjs/morgan 
 
 ##### passport
 * An authentication middleware for node.js
 * Used as the user authentication backbone in the application, with additional dependencies on express-session, and passport-local-mongoose
+
 http://www.passportjs.org/docs/downloads/html/ 
 
 ##### passport-local-mongoose
 * A mongoose plugin that simplifies user authentication with passport
 * Used in the application in conjunction with passport to manage user authentication
+
 https://github.com/saintedlama/passport-local-mongoose 
 
 ##### mocha
 * Javascript test framework
 * Used on back-end of the application for unit testing
+
 https://mochajs.org/ 
 
 ##### superagent
 * HTTP request library
 * Used in the application in conjunction with supertest for instantiating authentication in testing environment
+
 https://github.com/visionmedia/superagent 
 
 ##### supertest
 * HTTP request test library
 * Used in the application to test routing
+
 https://github.com/visionmedia/supertest 
 
 #### Frontend
 ##### React-Semantic
 * A Simple Styling library great for buttons
 
+https://react.semantic-ui.com
 
 ##### Redux
 * A program that allows React to have a global state
 
+https://redux.js.org/introduction/getting-started
 
 ##### React Router Dom
 * Program for routing component to App to render
 
+https://www.npmjs.com/package/react-router-dom
 
 ##### React-transition
 * A styling library with simple animations that can be applied to components
 
-
 ##### YouTube-ui
 * Helps render Iframes in components
-
 
 ##### React-router-last-location
 * Extension of React router that allows the previously rendered component to re-render
 
+https://www.npmjs.com/package/react-router-last-location
 
 ##### Prop-types
 * Allows for validation of information received into components
 
+https://www.npmjs.com/package/prop-types
 
 ##### Final-form-arrays
 * A simple styling library for forms
 
+https://www.npmjs.com/package/final-form-arrays
 
 ##### Redux-thunk
 * An extension of Redux which adds some functionality
 
-
+https://github.com/reduxjs/redux-thunk
 
 ### A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project?
 ### Answer:
