@@ -50,9 +50,6 @@ html {
     grid-row-start: 1;
     grid-row-end: 1;
     font-size: 1em;
-    text-align: center;
-    justify-self: center;
-    align-self: center;
     padding: 20px;
 }
 
