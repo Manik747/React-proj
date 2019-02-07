@@ -2,7 +2,7 @@ import { api } from "../../api/init";
 import {
   FETCH_EVENTS_ACTION,
   LOAD_EVENTS_ACTION,
-  EVENTS_FETCH_ERROR_ACTION
+  EVENTS_FETCH_ERROR_ACTION,  
 } from "../actions/constants/types";
 
 export const fetchEventsList = (userRoute) => async dispatch => {

@@ -424,11 +424,29 @@ iframe {
 /* Footer styling*/
 
 .footer{
-    display: inline-flex;
+    display:flex;
+    justify-content: space-around;
     width: 100%;
     margin: 0 auto;
-    height: 300px;
   }
+
+.section1{
+    display:flex;
+    flex-direction: column;
+
+}
+
+.section2{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.section3{
+    display: flex;
+    align-items: center;
+}
+  
   
   .Icon{
     font-size: 4rem;
@@ -442,8 +460,8 @@ iframe {
   }
   
   .FooterLogo{
-    height: 7rem;
-    width: 7rem;
+    height: 12rem;
+    width: 12rem;
     display: flex;
     align-content: center;
   }

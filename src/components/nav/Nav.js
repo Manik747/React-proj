@@ -22,6 +22,9 @@ class Nav extends Component {
     handleOnSignoutClick = e => {
         console.log('handleOnSignoutClick');
         this.props.logoutUser();
+        
+        // Remove all saved data from sessionStorage
+        sessionStorage.clear();
     }
     handleOnRegisterClick = (e, { name }) => {
         console.log('handleOnRegister');

@@ -9,8 +9,9 @@ import { LandingPg } from '../pages/LandingPage/LandingPg'
 import { authenticateUser, logoutUser } from "../../redux/actions/authenticateUserAction";
 
 class Authentication extends Component {
-
-
+    // componentDidMount(){
+    //     this.props.getSessionAuthToken("AuthToken");
+    // }
     handleSubmit = (event) => {
         event.preventDefault();
         const userRoute = this.props.history.location.pathname;
@@ -28,6 +29,7 @@ class Authentication extends Component {
         const { isLoggingIn, loggedIn, role, error } = this.props
         // const from = lastLocation ? lastLocation.pathname : '/';
         const authType = this.props.history.location.pathname.split('/')[2];
+        
         console.log('props here all the way | isLoggingIn', this.props.history, isLoggingIn)
         console.log('props errors logging in', this.props.error)
         let flash = false;
