@@ -38,7 +38,6 @@ class Nav extends Component {
         return (
             <Menu pointing secondary className="sticky" icon='labeled' size='mini' style={{ padding: '0px 20px' }}  >
                 <Menu.Item
-                    // as={Navi} to="/" name="home"
                     as={NavLink} to='/'
                     name='home'
                     active={activeItem === 'home'}
@@ -49,7 +48,6 @@ class Nav extends Component {
                     <Icon name='home' />HOME
                 </Menu.Item>
                 <Menu.Item
-                    // as={Navi} to="/about" name="about"
                     as={NavLink} to='/about'
                     name='about'
                     active={activeItem === 'info'}
@@ -61,7 +59,6 @@ class Nav extends Component {
                 </Menu.Item>
                 {loggedIn && userRole === 'admin' &&
                     <Menu.Item
-                        // as={Navi} to="/dashboard" name="dashboard"
                         as={NavLink} to='/dashboard'
                         name='dashboard'
                         active={activeItem === 'users'}
@@ -74,9 +71,7 @@ class Nav extends Component {
                 }
 
                 <Menu.Item
-                    // style={dodgerRed}
                     position='right'
-                    // as={Navi} to="/create" name="create"
                     as={NavLink} to='/create'
                     name='create'
                     active={activeItem === 'add'}

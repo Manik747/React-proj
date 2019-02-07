@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Image, Segment  } from 'semantic-ui-react';
+import { Grid, } from 'semantic-ui-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {fab} from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';

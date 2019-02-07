@@ -20,7 +20,7 @@ export const showResults = async values => {
 }
 
 function HostDetailsForm(props) {
-  const { values, form, handleSubmit, hasValidationErrors, pristine, submitting, invalid, nextStep, page } = props;
+  const { values, handleSubmit, nextStep, page } = props;
   console.log('HandleSubmit...', values)
   return (
     <Grid textAlign='center' >
@@ -83,11 +83,10 @@ function HostDetailsForm(props) {
                             type='button' 
                             label="Continue" 
                             color='red' 
-                            disabled={((Object.keys(values).length < 5)) || !values.socials }
+                            disabled={((Object.keys(values).length < 4)) || !values.socials }
                             onClick={nextStep}
                             />
-                // <pre>{JSON.stringify(!!errors.socials, undefined, 2)}</pre>
-                // <pre>{JSON.stringify((Object.keys(values).length < 4), undefined, 2)}</pre>
+
               )}
               
             </FormSpy>          

@@ -13,7 +13,7 @@ import {targetOptions} from '../optionsData/targetOptions';
 import { InputTextArea, InputCheckBox, DropdownMenu } from '../eventFormfields/EventFormfields';
 
 function YourCauseForm(props) {
-  const { handleSubmit, hasValidationErrors, pristine, submitting, invalid, prevStep, nextStep, values } = props;
+  const { hasValidationErrors, pristine, invalid, prevStep, nextStep} = props;
   console.log('Values within CauseForm', props)
   return (
     <Grid textAlign='center' >
@@ -62,7 +62,6 @@ function YourCauseForm(props) {
                  <Button type='button' label="Continue" color='red' disabled={(Object.keys(values).length < 5) ? true : false} onClick={nextStep} />
               )}
             </FormSpy>
-            {/* <Button type='button' label="Continue" color='red' disabled={submitting || pristine} onClick={nextStep} /> */}
             <Button label="Back" primary={false} disabled={invalid || hasValidationErrors || pristine} onClick={prevStep} />
           </Form>
         </Segment>

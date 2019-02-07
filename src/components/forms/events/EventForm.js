@@ -11,10 +11,6 @@ import { api } from "../../../api/init";
 import FormStateFromRedux from "../FormStateFromRedux";
 
 
-var validUrl = require('valid-url');
-
-
-
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 export const showResults = async values => {
   await sleep(500);
@@ -33,24 +29,7 @@ class CreateEventForm extends Component {
       page: Math.max(state.page - 1, 0)
     }));
   }
-  // changeNewSocial = event => {
-  //   this.setState({ newSocials: event.target.value })
-
-  // }
-
-  // createNewSocial = event => {
-  //   event.preventDefault()
-  //   if (validUrl.isWebUri(this.state.newSocials)) {
-  //     console.log('Looks like an URI');
-  //     const socials = [...this.state.socials, this.state.newSocials]
-  //     this.setState({ socials, newSocials: '' })
-  //   } else {
-  //     alert("Please enter a valid URL.");
-  //     console.log('Not a URI');
-  //   }
-
-  // }
-
+  
   handleFormSubmit = async values => { 
     // const location = [values.suburb, values.zipCode, values.country];
     const key_influencers = values.key_influencers ? 
@@ -71,9 +50,6 @@ class CreateEventForm extends Component {
       key_influencers,
       location: [values.suburb, values.zipCode, values.country]
     };
-    // console.log("error submitting form", error);
-    // showResults(eventData);
-    // return;
     try{
          console.log(JSON.stringify(eventData));
          const response = await api.post("/expression-of-interest", eventData);
@@ -81,6 +57,7 @@ class CreateEventForm extends Component {
          const eventConfirmation = response.data;
 
          showResults(eventConfirmation);
+         this.props.history.push('/');
        }catch(error){
       console.error('error submitting form', error)
     }
@@ -103,7 +80,7 @@ class CreateEventForm extends Component {
           prevStep={this.prevStep}
           render={RenderEventForm}
           />
-        <FormStateFromRedux form="userForm" />
+        {/* <FormStateFromRedux form="userForm" /> */}
         <Footer/>
       </div>
     )
