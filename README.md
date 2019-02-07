@@ -50,19 +50,21 @@ MongoDb
 Heroku for Client and Server, MLabs for Database
 
 ### Project Charter
+[WBGS Project Charter](\docs\Project Charter - WBGS.pdf)
 
 ### Client Diary
+[Client Diary](\docs\WBGS App - Client Diary.pdf)
 
 ### Screenshots of Final Application
 
 ### Handover (incl. Satisfaction questionnaire)
-Pending
+[Handover Document](\docs\WBGS - Handover.pdf)
+Note: Questionnaire Pending
 
 ### Instructions for Use
 
 #### GUEST USER
-1. Visit application homepage 
-(currently https://react-app-ca.herokuapp.com/ )
+1. Visit application homepage (currently https://react-app-ca.herokuapp.com/ )
 2. View video on landing page
 3. Navigate to WBGS information and statistics
 4. Follow the call to action to express your interest in hosting a WBGS event
@@ -73,8 +75,7 @@ Pending
 
 #### ADMIN USER
 1. Receive an email notification of a newly submitted expression of interest.
-2. Visit application homepage 
-(currently https://react-app-ca.herokuapp.com/ )
+2. Visit application homepage (currently https://react-app-ca.herokuapp.com/ )
 3. Log in to the application to get directed to the application dashboard
 4. View a list of all of the expressions of interest received from potential WBGS hosts. Filter this list to see all applications, or only those currently on the shortlist.
 5. Select one of the listed EOI’s to see more detailed data about the applicant
@@ -85,14 +86,19 @@ Pending
 
 ## Design Documentation
 ### User Journey / Flow Diagram 
+[WBGS User Journey Diagram](\docs\img\WBGS Workflow _User Journey.jpg)
 
 ### OOP / Components
+[WBGS OOP / Components List](\docs\WBGS - OOP_ Components .pdf)
 
 ### Wire-Frames
+[WBGS Wireframes](\docs\img\wireframes)
 
-### Data Flow - Done
+### Data Flow
+[WBGS Data Flow Diagraams](\docs\img\WBGS Dataflows.jpg)
 
-### ERD - Done
+### ERD
+[WBGS ERD](\docs\img\WBGS App - ERD.png)
 
 ## Details of Project Management and Planning Process
 ### Project Sprints
@@ -101,8 +107,10 @@ The Project was divided into two sprints of a week each:
  - 2nd - Dashboard
  
 ### Project Planning Document
+[Project Planning](\docs\WBGS -Project Planning Phase.pdf)
 
 ### White Boarding / Brainstorming Photos
+[Brainstorming](\docs\img\planning)
 
 ### Project Timeline & Effort Estimation
 Used Trello labels and dates to estimate:
@@ -113,6 +121,9 @@ Used Trello labels and dates to estimate:
  * Task Completion Dates
  
 ### Trello Board Screenshots
+[Trello Boards](\docs\img\trello screen caps)
+
+The Trello board can also be seen in full at: https://trello.com/b/dNKT0C4a/real-world-react-app
 
 ### Team Communication
 Slack was used predominantly, and allowed for communication away from the common programming environment and out of hours. Outside of this,  Google Docs, GitHub comments, and in person communication were all used where possible
