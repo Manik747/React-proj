@@ -302,26 +302,26 @@ An extension of Redux which adds some functionality
 A development team would need a range of both soft and hard skills in order to complete a project for a small business. Exact skills required may differ depending on the business, and project, but a range of the following hard and soft skills may be required:
 #### Hard skills
 * Wide range of technical expertise
- - HTML
- - CSS
- - JS / JSON / AJAX
- - Core Programming Language(s) (Node.js, Ruby, Python)
- - Frameworks & Libraries (React, Express, Ruby on Rails, Django)
- - Third Party Software & API’s
- - Database / Query Language(s) (PostGres, Mongo / Mongoose, GraphQL)
- - Email integration
- - CMS's (Wordpress Drupal)
- - Web Security
- - SEO
- - Social media integration 
- - Deployment / SysAdmin
- - Analytics
- - Mobile Development / Support
- - Testing & Maintenance
+    - HTML
+    - CSS
+    - JS / JSON / AJAX
+    - Core Programming Language(s) (Node.js, Ruby, Python)
+    - Frameworks & Libraries (React, Express, Ruby on Rails, Django)
+    - Third Party Software & API’s
+    - Database / Query Language(s) (PostGres, Mongo / Mongoose, GraphQL)
+    - Email integration
+    - CMS's (Wordpress Drupal)
+    - Web Security
+    - SEO
+    - Social media integration 
+    - Deployment / SysAdmin
+    - Analytics
+    - Mobile Development / Support
+    - Testing & Maintenance
 * Web & Graphic Design Skills
- - Responsive design
- - Knowledge of Design Software
- - Design sense (logos, photos etc.)
+    - Responsive design
+    - Knowledge of Design Software
+    - Design sense (logos, photos etc.)
 * Project Management (Time, Resources, Task Allocation)
 * Documentation (instructions for use, records of assets etc.)
 * Business Acumen
@@ -350,22 +350,22 @@ A development team would need a range of both soft and hard skills in order to c
 ### Answer: 
 In our own project, we needed the following skills:
 * Hard skills
- - HTML
- - CSS
- - JS / JSON / AJAX
- - Node.js
- - React
- - Third Party Software & API’s
- - Mongo / Mongoose
- - Email integration
- - Data validation
- - Deployment to Heroku
+    - HTML
+    - CSS
+    - JS / JSON / AJAX
+    - Node.js
+    - React
+    - Third Party Software & API’s
+    - Mongo / Mongoose
+    - Email integration
+    - Data validation
+    - Deployment to Heroku
 * Soft Skills
- - Problem Solving Mindset
- - Client Communication
- - Team Management, Communication, & Cooperation
- - Creativity
- -Attention to Detail
+    - Problem Solving Mindset
+    - Client Communication
+    - Team Management, Communication, & Cooperation
+    - Creativity
+    -Attention to Detail
 
 
 ### Evaluate how effective your knowledge and skills were in this project, and suggest changes or improvements for future projects of a similar nature?
