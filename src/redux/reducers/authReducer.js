@@ -61,7 +61,7 @@ export default (state = initialState, action) => {
         ...state,
         loggedIn: false,
         logout: true,
-        loggingFromSession: false,
+        loggingFromSession: true,
         authenticatedUserEmail: null,
         authenticatedUserRole: null
       };

@@ -1,7 +1,7 @@
-import {Grid, Cell} from 'react-mdl'
+// import {Grid, Cell} from 'react-mdl'
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import { Button } from 'semantic-ui-react'
+// import { Link } from 'react-router-dom'
+import { Button,Image } from 'semantic-ui-react'
 
 
 export default class InfoPg extends Component {

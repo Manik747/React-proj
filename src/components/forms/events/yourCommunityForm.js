@@ -1,6 +1,6 @@
 import React from 'react'
 import { FormSpy, Field } from "react-final-form";
-import { FieldArray } from "react-final-form-arrays";
+// import { FieldArray } from "react-final-form-arrays";
 import {
   Grid,
   Segment,
@@ -10,11 +10,11 @@ import {
   Label
 } from 'semantic-ui-react';
 import { countryOptions } from '../optionsData/countryOptions';
-import { DatePicker, InputCheckBox, InputText, RenderSocials , DropdownMenu } from '../eventFormfields/EventFormfields';
-import FormStateToRedux from "../FormStateToRedux";
+import { DatePicker, InputCheckBox, InputText,  DropdownMenu } from '../eventFormfields/EventFormfields';
+// import FormStateToRedux from "../FormStateToRedux";
 
 function YourCommunityForm(props) {
-  const {  pristine, touch, invalid, prevStep, nextStep, page } = props;
+  const {  pristine, prevStep, nextStep,} = props;
   return (
     <Grid textAlign='center' >
       <Grid.Column width={10}>
@@ -94,16 +94,6 @@ function YourCommunityForm(props) {
                 </Form.Field>
               )}
             </FormSpy>
-
-            {/* <Form.Field >
-              <Field
-                name='local_council_detailS'
-                type='text'
-                placeholder='Please enter the Council name'
-                component={InputText}
-                subscription={{ value: true, active: true, error: true, touched: true }}
-              />
-            </Form.Field>             */}
             <Form.Field >
               <Label style={{ background: '#fefafa', padding: 10 }}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos rerum non,

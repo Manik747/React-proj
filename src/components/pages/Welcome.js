@@ -1,6 +1,6 @@
 import React, { Fragment, Component } from 'react';
 import { api } from '../../api/init';
-import Footer from './Footer';
+// import Footer from './Footer';
 export default class Welcome extends Component {
 
   constructor(props) {
