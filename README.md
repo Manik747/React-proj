@@ -50,13 +50,13 @@ MongoDb
 Heroku for Client and Server, MLabs for Database
 
 ### Initial Client Consultation
-[Initial Consultation](\docs\initial_consult_client_questionnaire.pdf)
+[Initial Consultation](/docs/initial_consult_client_questionnaire.pdf)
 
 ### Client Diary
-[Client Diary](\docs\client_diary.pdf)
+[Client Diary](/docs/client_diary.pdf)
 
 ### Project Charter
-[WBGS Project Charter](\docs\project_charter.pdf)
+[WBGS Project Charter](/docs/project_charter.pdf)
 
 ### Screenshots of Final Application
 ![Home Page Top](/docs/img/application_screenshots/homeTop.png)
@@ -71,7 +71,7 @@ Heroku for Client and Server, MLabs for Database
 
 
 ### Handover (incl. Satisfaction questionnaire)
-[Handover Document](\docs\handover.pdf)
+[Handover Document](/docs/handover.pdf)
 Note: Questionnaire Pending
 
 ### Instructions for Use
@@ -99,19 +99,19 @@ Note: Questionnaire Pending
 
 ## Design Documentation
 ### User Journey / Flow Diagram 
-[WBGS User Journey Diagram](\docs\img\wbgs_user_journey.jpg)
+[WBGS User Journey Diagram](/docs/img/wbgs_user_journey.jpg)
 
 ### OOP / Components
-[WBGS OOP / Components List](\docs\oop_components.pdf)
+[WBGS OOP / Components List](/docs/oop_components.pdf)
 
 ### Wire-Frames
-[WBGS Wireframes](\docs\img\wireframes)
+[WBGS Wireframes](/docs/img/wireframes)
 
 ### Data Flow
-[WBGS Data Flow Diagraams](\docs\img\wbgs_datflow.jpg)
+[WBGS Data Flow Diagraams](/docs/img/wbgs_datflow.jpg)
 
 ### ERD
-[WBGS ERD](\docs\img\wbgs_erd.png)
+[WBGS ERD](/docs/img/wbgs_erd.png)
 
 ## Details of Project Management and Planning Process
 ### Project Sprints
@@ -120,10 +120,10 @@ The Project was divided into two sprints of a week each:
  - 2nd - Dashboard
  
 ### Project Planning Document
-[Project Planning](\docs\project_planning.pdf)
+[Project Planning](/docs/project_planning.pdf)
 
 ### White Boarding / Brainstorming Photos
-[Brainstorming](\docs\img\planning)
+[Brainstorming](/docs/img/planning)
 
 ### Project Timeline & Effort Estimation
 Used Trello labels and dates to estimate:
@@ -134,7 +134,7 @@ Used Trello labels and dates to estimate:
  * Task Completion Dates
  
 ### Trello Board Screenshots
-[Trello Boards](\docs\img\trello screen caps)
+[Trello Boards](/docs/img/trello screen caps)
 
 The Trello board can also be seen in full at: https://trello.com/b/dNKT0C4a/real-world-react-app
 
