@@ -2,10 +2,12 @@
 
 ## Links to Published App
 [Visit the main application](https://react-app-ca.herokuapp.com/) 
+
 [Visit the server](https://wbgs-server.herokuapp.com/)
 
 ## Links to Git Repositories
 [Client repository](https://github.com/Manik747/React-proj)
+
 [Server repository](https://github.com/EnFen/express-proj)
 
 ## Project Description
@@ -26,6 +28,16 @@
  * Functionality & Features 
  * Application is able to take expressions of interest and submit data to a mailer and a database
  * Dashboard is available to view expressions of interest
+ 
+### Functionality & Features 
+The landing page makes use of videos, quotes, statistics and buttons that are highlighted . This is to draw potential host in and have them submit a expression of interest.
+
+Application is able to take expressions of interest and submit data to a mailer and a database. User who submitted the form is sent a confirmation email and wgbs is sent and email with the data submitted.
+
+Dashboard is available to view expressions of interest ,dashboard displays cards with each eoi printed out on them. Only the hosts name, organisation and date of the eoi is displayed on the cards. There is also a view button on each card that takes the eoi id  and sends  it through the router to the next section of dashboard which is the dashboard view. There is also a filter option to filter what eoi’s are displayed if they are either shortlisted or not.
+
+Dashboard view is where the eoi’s data is fetched from the db and displayed to admin. There is a checklist along side the information that is there to check off if potential host meet wbgs criteria. Eois can be updated - shortlisted  and rejected. If an eoi is rejected the admin is prompt for a denial reason  which is then sent via email to candidate who submitted eoi explaining there rejection.
+
 
 ### Tech. Stack
 #### Front-End: 
@@ -37,20 +49,25 @@ MongoDb
 #### Deployment Platforms: 
 Heroku for Client and Server, MLabs for Database
 
-### Project Charter
+### Initial Client Consultation
+[Initial Consultation](\docs\initial_consult_client_questionnaire.pdf)
 
 ### Client Diary
+[Client Diary](\docs\client_diary.pdf)
+
+### Project Charter
+[WBGS Project Charter](\docs\project_charter.pdf)
 
 ### Screenshots of Final Application
 
 ### Handover (incl. Satisfaction questionnaire)
-Pending
+[Handover Document](\docs\handover.pdf)
+Note: Questionnaire Pending
 
 ### Instructions for Use
 
 #### GUEST USER
-1. Visit application homepage 
-(currently https://react-app-ca.herokuapp.com/ )
+1. Visit application homepage (currently https://react-app-ca.herokuapp.com/ )
 2. View video on landing page
 3. Navigate to WBGS information and statistics
 4. Follow the call to action to express your interest in hosting a WBGS event
@@ -61,8 +78,7 @@ Pending
 
 #### ADMIN USER
 1. Receive an email notification of a newly submitted expression of interest.
-2. Visit application homepage 
-(currently https://react-app-ca.herokuapp.com/ )
+2. Visit application homepage (currently https://react-app-ca.herokuapp.com/ )
 3. Log in to the application to get directed to the application dashboard
 4. View a list of all of the expressions of interest received from potential WBGS hosts. Filter this list to see all applications, or only those currently on the shortlist.
 5. Select one of the listed EOI’s to see more detailed data about the applicant
@@ -73,14 +89,19 @@ Pending
 
 ## Design Documentation
 ### User Journey / Flow Diagram 
+[WBGS User Journey Diagram](\docs\img\wbgs_user_journey.jpg)
 
 ### OOP / Components
+[WBGS OOP / Components List](\docs\oop_components.pdf)
 
 ### Wire-Frames
+[WBGS Wireframes](\docs\img\wireframes)
 
-### Data Flow - Done
+### Data Flow
+[WBGS Data Flow Diagraams](\docs\img\wbgs_datflow.jpg)
 
-### ERD - Done
+### ERD
+[WBGS ERD](\docs\img\wbgs_erd.png)
 
 ## Details of Project Management and Planning Process
 ### Project Sprints
@@ -89,8 +110,10 @@ The Project was divided into two sprints of a week each:
  - 2nd - Dashboard
  
 ### Project Planning Document
+[Project Planning](\docs\project_planning.pdf)
 
 ### White Boarding / Brainstorming Photos
+[Brainstorming](\docs\img\planning)
 
 ### Project Timeline & Effort Estimation
 Used Trello labels and dates to estimate:
@@ -101,6 +124,9 @@ Used Trello labels and dates to estimate:
  * Task Completion Dates
  
 ### Trello Board Screenshots
+[Trello Boards](\docs\img\trello screen caps)
+
+The Trello board can also be seen in full at: https://trello.com/b/dNKT0C4a/real-world-react-app
 
 ### Team Communication
 Slack was used predominantly, and allowed for communication away from the common programming environment and out of hours. Outside of this,  Google Docs, GitHub comments, and in person communication were all used where possible
@@ -111,9 +137,9 @@ Each contributor had their own fork of the pristine master branch, and checked o
 Completed feature branches were submitted for code review by at least two other contributors before a merge back into the master branch was allowed.
 
 ### Testing
- * Automated / Unit Tests - To be performed
+ * Automated / Unit Tests - To be performed - had problems getting Jest & Mocha working with app
  * Regression Tests - To be performed
- * Integration Tests - To be performed
+ * Integration Tests - To be performed  - had problems getting Jest & Mocha working with app
  
 ### Post Project Review
 #### What did we enjoy?
@@ -166,136 +192,151 @@ Three high-level areas of software quality, and some aspects within each are con
 ### What are the libraries being used in the app, and why?
 ### Answer:
 
-Library Name
-Description / 
-Reason for use
-Git repository /
-API Reference 
-Backend
-@sendgrid/mail
-A dedicated service for sending emails from node.js apps
-Used in this application to send emails to applicants and to WBGS after an expression of interest has been submitted, and also to email denied applicants
+#### Backend
+##### @sendgrid/mail 
+* A dedicated service for sending emails from node.js apps 
+* Used in this application to send emails to applicants and to WBGS after an expression of interest has been submitted, and also to email denied applicants 
 
-https://github.com/sendgrid/sendgrid-nodejs/tree/master/packages/mail 
-cors
-A node.js package for which provides express middleware that can be used to enable cors
-Used to enable connection between the front-end and back-end of the application
+https://github.com/sendgrid/sendgrid-nodejs/tree/master/packages/mail
+
+##### cors
+* A node.js package for which provides express middleware that can be used to enable cors
+* Used to enable connection between the front-end and back-end of the application
 
 https://github.com/expressjs/cors 
-debug
-Default express generator library
-Customises console messages
-Currently only used in default modules created by express generator
 
+##### debug
+* Default express generator library
+* Customises console messages
+* Currently only used in default modules created by express generator
 https://github.com/visionmedia/debug 
-dotenv
-Loads environment variables from .env for node.js projects.
-Used for storing secure variables for the application
+
+##### dotenv
+* Loads environment variables from .env for node.js projects.
+* Used for storing secure variables for the application
 
 https://github.com/motdotla/dotenv 
-ejs
-Embedded javascript templating library
-Used in the application to compose html strings to be sent as emails from the server
+
+##### ejs
+* Embedded javascript templating library
+* Used in the application to compose html strings to be sent as emails from the server
 
 https://github.com/mde/ejs 
-express
-A web framework for node.js
-Used as the server architecture for the application
+
+##### express
+* A web framework for node.js
+* Used as the server architecture for the application
 
 http://expressjs.com/ 
-express-acl
-An express module which allows the use of “Access Control Lists”
-Used in the application for access routing for users with authorised roles (eg. admin access to dashboard)
+
+##### express-acl
+* An express module which allows the use of “Access Control Lists”
+* Used in the application for access routing for users with authorised roles (eg. admin access to dashboard)
 
 https://github.com/nyambati/express-acl 
-express-session
-Session middleware for express
-Used in the application in conjunction with passport to manage user authentication
+
+##### express-session
+* Session middleware for express
+* Used in the application in conjunction with passport to manage user authentication
 
 https://github.com/expressjs/session 
-http-errors
-Default express generator library
-Allows for easy creation of HTTP errors in express
-Used in default modules created by express generator, and minor error handling in the application
+
+##### http-errors
+* Default express generator library
+* Allows for easy creation of HTTP errors in express
+* Used in default modules created by express generator, and minor error handling in the application
 
 https://github.com/jshttp/http-errors 
-joi
-Allows for the creation of object schemas for validation
-Used in the application to sanitise and validate data being submitted to the database
+
+##### joi
+* Allows for the creation of object schemas for validation
+* Used in the application to sanitise and validate data being submitted to the database
 
 https://github.com/hapijs/joi 
-mongoose
-An abstraction layer for mongoDB which allows for elegant object modelling in node.js
-Used in the application to define schemas and to issue data queries to the database
+
+##### mongoose
+* An abstraction layer for mongoDB which allows for elegant object modelling in node.js
+* Used in the application to define schemas and to issue data queries to the database
 
 https://mongoosejs.com/docs/guide.html 
-morgan
-Provides helpful HTTP logging middleware for node.js
-Used in the application development environment for debugging and console messaging
+
+##### morgan
+* Provides helpful HTTP logging middleware for node.js
+* Used in the application development environment for debugging and console messaging
 
 https://github.com/expressjs/morgan 
-passport
-An authentication middleware for node.js
-Used as the user authentication backbone in the application, with additional dependencies on express-session, and passport-local-mongoose
+
+##### passport
+* An authentication middleware for node.js
+* Used as the user authentication backbone in the application, with additional dependencies on express-session, and passport-local-mongoose
 
 http://www.passportjs.org/docs/downloads/html/ 
-passport-local-mongoose
-A mongoose plugin that simplifies user authentication with passport
-Used in the application in conjunction with passport to manage user authentication
+
+##### passport-local-mongoose
+* A mongoose plugin that simplifies user authentication with passport
+* Used in the application in conjunction with passport to manage user authentication
 
 https://github.com/saintedlama/passport-local-mongoose 
-mocha
-Javascript test framework
-Used on back-end of the application for unit testing
+
+##### mocha
+* Javascript test framework
+* Used on back-end of the application for unit testing
 
 https://mochajs.org/ 
-superagent
-HTTP request library
-Used in the application in conjunction with supertest for instantiating authentication in testing environment
+
+##### superagent
+* HTTP request library
+* Used in the application in conjunction with supertest for instantiating authentication in testing environment
 
 https://github.com/visionmedia/superagent 
-supertest
-HTTP request test library
-Used in the application to test routing
+
+##### supertest
+* HTTP request test library
+* Used in the application to test routing
 
 https://github.com/visionmedia/supertest 
-Frontend
-React-Semantic
-A Simple Styling library great for buttons
 
+#### Frontend
+##### React-Semantic
+* A Simple Styling library great for buttons
 
-Redux
-A program that allows React to have a global state
+https://react.semantic-ui.com
 
+##### Redux
+* A program that allows React to have a global state
 
-React Router Dom
-Program for routing component to App to render
+https://redux.js.org/introduction/getting-started
 
+##### React Router Dom
+* Program for routing component to App to render
 
-React-transition
-A styling library with simple animations that can be applied to components
+https://www.npmjs.com/package/react-router-dom
 
+##### React-transition
+* A styling library with simple animations that can be applied to components
 
-YouTube-ui
-Helps render Iframes in components
+##### YouTube-ui
+* Helps render Iframes in components
 
+##### React-router-last-location
+* Extension of React router that allows the previously rendered component to re-render
 
-React-router-last-location
-Extension of React router that allows the previously rendered component to re-render
+https://www.npmjs.com/package/react-router-last-location
 
+##### Prop-types
+* Allows for validation of information received into components
 
-Prop-types
-Allows for validation of information received into components
+https://www.npmjs.com/package/prop-types
 
+##### Final-form-arrays
+* A simple styling library for forms
 
-Final-form-arrays
-A simple styling library for forms
+https://www.npmjs.com/package/final-form-arrays
 
+##### Redux-thunk
+* An extension of Redux which adds some functionality
 
-Redux-thunk
-An extension of Redux which adds some functionality
-
-
+https://github.com/reduxjs/redux-thunk
 
 ### A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project?
 ### Answer:
