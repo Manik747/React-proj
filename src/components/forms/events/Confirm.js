@@ -8,36 +8,10 @@ import {
  List,
  Segment
 } from 'semantic-ui-react';
-
-// import {showResults } from './EventForm';
-
-// import {FormSpy } from "react-final-form";
-
 import { getFormState } from "../../../redux/reducers/reduxFormReducer";
-// import FormStateToRedux from "../FormStateToRedux";
-// import { InputTextArea, InputCheckBox, DropdownMenu } from '../eventFormfields/EventFormfields';
-
-
-// const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-// export const showResults = async values => {
-//  await sleep(500);
-//  window.alert(JSON.stringify(values, undefined, 2));
-// }
 
 
 class Confirm extends Component {
-
- confirmSubmit = values => {
-  // e.preventDefault();
-  // showResults(values);
-  // Process your form i.e. send data to API
- }
-
- // Go back to previous page
- // back = e => {
- //  e.preventDefault();
- //  this.props.prevStep();
- // }onClick={this.confirmSubmit}
 
  render() {
    const { handleSubmit, submitting, prevStep} = this.props;
@@ -49,7 +23,6 @@ class Confirm extends Component {
           last_name,
           email,
           organisation,
-          socials,
           description,
           target_value,
           volunteers,
@@ -64,7 +37,6 @@ class Confirm extends Component {
    <Grid textAlign='center' >
     <Grid.Column width={10}>
       <Segment inverted style={{ textAlign: "justify", padding: 20 }}>
-      {/* <FormStateToRedux form="confirmForm" /> */}
        <Form onSubmit={handleSubmit}>
        <List divided inverted relaxed>
         
@@ -186,9 +158,7 @@ class Confirm extends Component {
          </List.Content>
         </List.Item>
        </List>
-
        <br />
-       {/* <button type="submit" > Submit </button> */}
         <Button animated='fade' color='red'  disabled={invalid || submitting || hasValidationErrors}>
           <Button.Content visible>Confirm</Button.Content>
           <Button.Content hidden>Submit</Button.Content>
@@ -199,8 +169,6 @@ class Confirm extends Component {
             <Icon name='arrow left' />
           </Button.Content>
         </Button>
-       {/* <Button type='submit' content="Confirm" color='red'  disabled={invalid || submitting || hasValidationErrors}  /> */}
-       {/* <Button label="Back" primary={false} style={styles.button} onClick={prevStep} /> */}
        </Form>
       </Segment>
     </Grid.Column>
@@ -209,13 +177,9 @@ class Confirm extends Component {
  }
 }
 
-const styles = {
- button: { margin: 15 }
-}
-
 const mapPropsToTypes = (state, ownProps) => ({
  state: getFormState(state, ownProps.form)
 });
 export default connect(mapPropsToTypes)(Confirm);
-// export default Confirm;
+
 

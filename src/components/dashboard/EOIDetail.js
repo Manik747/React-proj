@@ -47,7 +47,7 @@ export default class EOIDetails extends Component {
             this.state.val_social &&
             this.state.val_scope &&
             this.state.val_vols &&
-            this.state.val_people == true) {
+            this.state.val_people === true) {
         this.setState({shortlist: !this.state.shortlist})
             }
     }
@@ -79,21 +79,17 @@ export default class EOIDetails extends Component {
             case 'chk_place':
                 newState = { val_place: !this.state.val_place }
                 break;
-            case 'chk_council':
-                newState = { val_council: !this.state.val_council }
-                break;
             case 'chk_people':
                 newState = { val_people: !this.state.val_people }
                 break;
+            default: 
+                console.log("this is a deafault")
         }
         this.setState(newState)
     }
 
         render() {
             console.log('Hello from Confirm Form', this.props)
-            const { handleSubmit, prevStep } = this.props;
-            const { values } = this.state;
-
             if (!this.state) return null;
             const { firstName,
                 lastName,
@@ -310,7 +306,7 @@ export default class EOIDetails extends Component {
                 <Grid className="form-grid3">
                     <Grid.Column>
                         <Segment inverted style={{ textAlign: "justify", background:"#FFFFFF"}}>
-                            <img src={ this.state.shortlist ? "./Assets/WBGS-logo.png":"./Assets/WBGS-logo dulled.png" } className= "wbgs-logo"/>
+                            <img src={ this.state.shortlist ? "./Assets/WBGS-logo.png":"./Assets/WBGS-logo dulled.png" } alt="wbgs" className= "wbgs-logo"/>
                         </Segment>
                     </Grid.Column>
                 </Grid>

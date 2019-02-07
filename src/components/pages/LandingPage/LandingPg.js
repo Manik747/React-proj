@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { Button } from 'semantic-ui-react';
-import {Grid, Cell} from 'react-mdl';
-
+import {Grid} from 'react-mdl';
 import GarageSaleVid from './Youtube'
 import InfoPg from './InfoPg';
 import FlashMessage from "../../forms/Messages/FlashMessage";
@@ -37,7 +36,7 @@ onClickMore() {
 
         }
             <div className="banner-text">
-                <img src="/Assets/WBGS-logo.png" className="logo"/>
+                <img src="/Assets/WBGS-logo.png" className="logo" alt="wbgs-logo"/>
                 <hr/>  
                 <GarageSaleVid videoId='SkiTGS_ThA0'/>   
             </div>

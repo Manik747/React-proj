@@ -59,31 +59,6 @@ class AdminDashboard extends Component {
     const current_page = this.props.page;
     const start_offset = (current_page - 1) * per_page;
     let start_count = 0;
-
-    const buildcards2 = this.state.data.map((Data) =>
-     <React.Fragment>
-       <Card.Group centered>
-         <Card color="red" fluid > 
-           <Card.Content color="red"  >
-              <input  type="hidden" value={Data._id}></input>
-              <Card.Header key={Data.first_name} >{Data.host.first_name}</Card.Header>
-              <Card.Meta key={Data.createdAt}>{Data.createdAt}</Card.Meta>
-              <Card.Description key={Data.organisation}>{Data.host.organisation}</Card.Description>
-              <Button animated inverted color="red">
-              <Button.Content visible>VIEW</Button.Content>
-              <Button.Content hidden>
-                  <Icon name='arrow right' />
-              </Button.Content>
-              </Button>
-              <div>
-              {Data.criteria.shortlisted ? (<Image floated='right' size='mini' src='/Assets/WBGS-logo.png' />):
-              (<Image floated='right' size='mini' src='/Assets/WBGS-logo dulled.png' />)}
-              </div>
-          </Card.Content>
-         </Card>
-       </Card.Group>
-     </React.Fragment>)
-
     
     // Render
     const buildCards = events.map((Data, index) => {

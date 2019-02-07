@@ -1,19 +1,12 @@
 import React, { Component } from 'react';
 import { Form as FinalForm } from "react-final-form";
 import arrayMutators from "final-form-arrays";
-
 import createDecorator from "final-form-focus";
 import Footer from '../../pages/Footer'
 import RenderEventForm from '././renderEventForm';
-import isUri from 'valid-url';
 import validate from '../validates';
 import { api } from "../../../api/init";
 import FormStateFromRedux from "../FormStateFromRedux";
-
-
-var validUrl = require('valid-url');
-
-
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 export const showResults = async values => {
@@ -33,26 +26,9 @@ class CreateEventForm extends Component {
       page: Math.max(state.page - 1, 0)
     }));
   }
-  // changeNewSocial = event => {
-  //   this.setState({ newSocials: event.target.value })
 
-  // }
-
-  // createNewSocial = event => {
-  //   event.preventDefault()
-  //   if (validUrl.isWebUri(this.state.newSocials)) {
-  //     console.log('Looks like an URI');
-  //     const socials = [...this.state.socials, this.state.newSocials]
-  //     this.setState({ socials, newSocials: '' })
-  //   } else {
-  //     alert("Please enter a valid URL.");
-  //     console.log('Not a URI');
-  //   }
-
-  // }
 
   handleFormSubmit = async values => { 
-    // const location = [values.suburb, values.zipCode, values.country];
     const key_influencers = values.key_influencers ? 
                              [...values.key_influencers.split(",").map(s => s.trim())] :
                              [];
@@ -71,9 +47,7 @@ class CreateEventForm extends Component {
       key_influencers,
       location: [values.suburb, values.zipCode, values.country]
     };
-    // console.log("error submitting form", error);
-    // showResults(eventData);
-    // return;
+    
     try{
          console.log(JSON.stringify(eventData));
          const response = await api.post("/expression-of-interest", eventData);

@@ -3,19 +3,13 @@ import { connect } from 'react-redux';
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import { LastLocationProvider } from 'react-router-last-location';
 import "./App.css";
-import Welcome from "../components/pages/Welcome";
 import Nav from "../components/nav/Nav";
 import NotFound from "../components/_404/NotFound";
 import About from "../components/pages/About";
-
 // import Authentication from "../components/forms/Authentication";
 import CreateEventForm from "../components/forms/events/EventForm";
-import Contact from "../components/pages/Contact";
 import Authentication from "../components/auth/Authentication";
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import LandingPg from "../components/pages/LandingPage/LandingPg";
-import InfoPg from "../components/pages/LandingPage/InfoPg"
 import EOIDetails from "../components/dashboard/EOIDetail"
 import AdminDashboard from "../components/dashboard/AdminDashboard"
 import { getSessionAuthToken} from "../redux/actions/authenticateUserAction";

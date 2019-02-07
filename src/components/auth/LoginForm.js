@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
-
 import IsLoadingInfoMessage from "../forms/Messages/loadingInfoMessage";
 import FlashMessage from "../forms/Messages/FlashMessage";
 
