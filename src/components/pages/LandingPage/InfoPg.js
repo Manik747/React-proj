@@ -1,7 +1,13 @@
 // import {Grid, Cell} from 'react-mdl'
 import React, { Component } from 'react'
+<<<<<<< HEAD
+import { Link } from 'react-router-dom'
+import { Button } from 'semantic-ui-react'
+import { NavLink } from 'react-router-dom'
+=======
 // import { Link } from 'react-router-dom'
 import { Button,Image } from 'semantic-ui-react'
+>>>>>>> ca47daf7f835cc7ed0542041761c626473a8810d
 
 
 export default class InfoPg extends Component {
@@ -35,11 +41,10 @@ export default class InfoPg extends Component {
                 <p>WE ARE LOOKING FOR ORGANIZATIONS WHO WANT TO ADD TO THERE COMMUNITY, BENEFIT THE PLANET AND ACTIVATE THE CIRCULAR ECONOMY IN THERE COMMUNITY.</p>
             </div>
             <div className="call2">
-                <Button inverted size="massive" floated="right" onClick={this.onClickMore}> Register interest </Button>
+                <Button inverted size="massive" floated="right" as={NavLink} to='/create'> Register interest </Button>
             </div> 
         </div>
     </div>
-    
     )
   }
 }
