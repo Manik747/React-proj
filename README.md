@@ -2,10 +2,12 @@
 
 ## Links to Published App
 [Visit the main application](https://react-app-ca.herokuapp.com/) 
+
 [Visit the server](https://wbgs-server.herokuapp.com/)
 
 ## Links to Git Repositories
 [Client repository](https://github.com/Manik747/React-proj)
+
 [Server repository](https://github.com/EnFen/express-proj)
 
 ## Project Description
