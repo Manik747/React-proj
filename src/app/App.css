@@ -100,7 +100,7 @@ h1{
     overflow-wrap: break-word;
     min-height: 400px;
 
-}
+} 
 
 .waste{
     grid-column-start: 4;
@@ -122,7 +122,8 @@ h1{
 }
 
 .banner-text h1 {
-    font-size: 66px;
+    font-size: 66; 
+    padding: 10px;
     color: white;
     display: flex;
     justify-content: center;

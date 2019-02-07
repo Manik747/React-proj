@@ -8,7 +8,7 @@ import {
 } from 'semantic-ui-react';
 import { FormSpy, Field } from "react-final-form";
 import { FieldArray } from "react-final-form-arrays";
-// import {showResults } from './EventForm';
+
 
 import FormStateToRedux from "../FormStateToRedux";
 import { InputText, RenderSocials } from '../eventFormfields/EventFormfields';
@@ -20,7 +20,7 @@ export const showResults = async values => {
 }
 
 function HostDetailsForm(props) {
-  const { values, form, handleSubmit, hasValidationErrors, pristine, submitting, invalid, nextStep, page } = props;
+  const { values, handleSubmit, nextStep, page } = props;
   console.log('HandleSubmit...', values)
   return (
     <Grid textAlign='center' >
@@ -86,8 +86,7 @@ function HostDetailsForm(props) {
                             disabled={((Object.keys(values).length < 5)) || !values.socials }
                             onClick={nextStep}
                             />
-                // <pre>{JSON.stringify(!!errors.socials, undefined, 2)}</pre>
-                // <pre>{JSON.stringify((Object.keys(values).length < 4), undefined, 2)}</pre>
+                
               )}
               
             </FormSpy>          

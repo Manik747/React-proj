@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-// import { push } from 'react-router-redux';
 import {
   Card,
   Button,
@@ -33,13 +32,13 @@ class AdminDashboard extends Component {
   }
   handleSeeShortlist = event =>{
     event.preventDefault()
-      api.get('/dashboard/shortlist?pageNum=1&limit=10', { headers: 'Bearer ' + 'foo' })
+      api.get('/dashboard/shortlist?pageNum=1&limit=10', { headers: 'Bearer foo' })
         .then((response) =>
         this.setState({data: response.data.data}))
   }
   handleSeeAll = event => {
         event.preventDefault()
-      api.get('/dashboard?pageNum=1&limit=10', { headers: 'Bearer ' + 'foo' })
+      api.get('/dashboard?pageNum=1&limit=10', { headers: 'Bearer foo' })
             .then((response) => this.setState({ data: response.data.data }))
   }
 

@@ -5,7 +5,6 @@ import RegistrationForm from './RegistrationForm';
 import LoginForm from './LoginForm';
 import PropTypes from 'prop-types';
 import { withLastLocation } from 'react-router-last-location';
-import { LandingPg } from '../pages/LandingPage/LandingPg'
 import { authenticateUser, logoutUser } from "../../redux/actions/authenticateUserAction";
 
 class Authentication extends Component {
@@ -27,7 +26,6 @@ class Authentication extends Component {
 
     render() {
         const { isLoggingIn, loggedIn, role, error } = this.props
-        // const from = lastLocation ? lastLocation.pathname : '/';
         const authType = this.props.history.location.pathname.split('/')[2];
         
         console.log('props here all the way | isLoggingIn', this.props.history, isLoggingIn)
@@ -52,8 +50,6 @@ Authentication.propTypes = {
     authenticateUser: PropTypes.func.isRequired,
     logoutUser: PropTypes.func.isRequired,
     loggedIn: PropTypes.bool.isRequired,
-    // user: PropTypes.object.isRequired,
-    // error: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({

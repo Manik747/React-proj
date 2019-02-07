@@ -7,7 +7,7 @@ import Welcome from "../components/pages/Welcome";
 import Nav from "../components/nav/Nav";
 import NotFound from "../components/_404/NotFound";
 import About from "../components/pages/About";
-// import Contact from "../components/pages/Contact";
+
 // import Authentication from "../components/forms/Authentication";
 import CreateEventForm from "../components/forms/events/EventForm";
 import Contact from "../components/pages/Contact";

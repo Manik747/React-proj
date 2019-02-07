@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types';
 import { Pagination, Icon } from "semantic-ui-react";
 
 const PaginateEventsList = (props)=>(
@@ -17,10 +16,6 @@ const PaginateEventsList = (props)=>(
     totalPages={props.totalPages}
    />
   );
-
-// PaginateEventsList.propTypes = {
-
-// }
 
 export default PaginateEventsList;
 

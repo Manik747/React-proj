@@ -13,7 +13,7 @@ import {targetOptions} from '../optionsData/targetOptions';
 import { InputTextArea, InputCheckBox, DropdownMenu } from '../eventFormfields/EventFormfields';
 
 function YourCauseForm(props) {
-  const { handleSubmit, hasValidationErrors, pristine, submitting, invalid, prevStep, nextStep, values } = props;
+  const { hasValidationErrors, pristine, invalid, prevStep, nextStep } = props;
   console.log('Values within CauseForm', props)
   return (
     <Grid textAlign='center' >

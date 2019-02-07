@@ -24,7 +24,7 @@ export default function LoginForm(props) {
           <Grid.Column style={{ maxWidth: 450 }}>
             <Header as='h2' color='teal' textAlign='center'>
             <Image src='/Assets/WBGS-logo.png' />
-              Log-in to your account {/* <Image src='/assets/logo.png' /> Log-in to your account */}
+              Log-in to your account 
             </Header>
             <Form onSubmit={submit} size='large'>
               <Segment raised>

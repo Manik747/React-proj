@@ -1,6 +1,4 @@
-import {Grid, Cell} from 'react-mdl'
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import { Button } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
 
@@ -12,7 +10,7 @@ export default class InfoPg extends Component {
         <div id="info" className="info-grid">
             <div className="people">
                 <h1>COMMUNITY</h1>
-                <img className="content" src="Assets/People.jpg"/>
+                <img className="content" src="Assets/People.jpg" alt="Community"/>
                     <ul>314K raised for charity so far</ul>
                     <ul>730 Volunteers over 5 years</ul>
                     <ul>8,760 Volunteer hours have been dedicated to WBGS events</ul>
@@ -20,13 +18,13 @@ export default class InfoPg extends Component {
             </div>
             <div className="enviroment">
                 <h1>ENVIROMENT</h1>
-                <img className="content"src="Assets/Enviroment.jpg"/>
+                <img className="content"src="Assets/Enviroment.jpg" alt="enviroment"/>
                     <ul>594,000kgs of CO2 prevented from entering Earth's atmosphere</ul>
                     <ul>Prevented approx 8250kgs of pesticides and chemicals from being used in production of new goods by recycling & reusing.</ul>
             </div>
             <div className="waste">
                 <h1>WASTE</h1>
-                <img className="content" src="Assets/waste.jpg"/>
+                <img className="content" src="Assets/waste.jpg" alt="waste"/>
                     <ul>An estimated potential benefit of AU$360,974 to the global economy by diverting waste from landfill and incineration</ul>
                     <ul>165 thousand kgs of garments diverted from landfill </ul>
             </div>
@@ -43,6 +41,3 @@ export default class InfoPg extends Component {
     )
   }
 }
-
-
-
