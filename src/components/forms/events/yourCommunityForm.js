@@ -56,7 +56,7 @@ function YourCommunityForm(props) {
             <Form.Group>
               <Form.Field>
                 <Label style={{ background: '#fefafa', padding: '15px 10px' }}>
-                  Select Expected time or season.  tempora hic. Nihil natus eligendi minus deleniti error?
+                  Please select the date you wish to hold the event.
                 </Label>
               </Form.Field>
               <Form.Field>
@@ -75,7 +75,7 @@ function YourCommunityForm(props) {
             <Form.Field >
               <Field
                 name="local_council_relationship"
-                label="Do You have a relationship with your local Counci?"
+                label="Do You have a relationship with your local Council?"
                 type="checkbox"
                 component={InputCheckBox}
                 subscription={{ value: true, active: true, error: true, touched: true }} />
@@ -96,8 +96,7 @@ function YourCommunityForm(props) {
             </FormSpy>
             <Form.Field >
               <Label style={{ background: '#fefafa', padding: 10 }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos rerum non,
-                delectus et aperiam provident numquam hic nihil id voluptatum eius in impedit blanditiis. Molestiae quas suscipit illum minima voluptatum! ...
+                Key Influencers
               </Label>
               <Field
                 name='key_influencers'

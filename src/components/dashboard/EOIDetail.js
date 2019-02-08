@@ -279,7 +279,7 @@ export default class EOIDetails extends Component {
                                     <List.Item>
                                         <List.Content>
                                             <List.Header style={{ color: "#cb3538" }}>
-                                                Description of Event
+                                                Host's introduction/why they wish to hold an event
                                             </List.Header>
                                             {description}
                                         </List.Content>
@@ -378,7 +378,7 @@ export default class EOIDetails extends Component {
                                     <List.Item>
                                         <List.Content>
                                             <List.Header style={{ color: "#cb3538" }}>
-                                                Does the organization meet and match the key WBGS values and believes.
+                                                Does the host reasoning provided meet and match the key WBGS values and believes.
                                             </List.Header>
                                             Check if yes - <Checkbox onChange={this.handleToggle} checked={this.state.descCheck} id="descCheck" />
                                             {this.state.descCheck ? <p>Description Check Confirmed</p>: <p>Description Check Unconfirmed</p>}
@@ -387,7 +387,7 @@ export default class EOIDetails extends Component {
                                     <List.Item>
                                         <List.Content>
                                             <List.Header style={{ color: "#cb3538" }}>
-                                                Is the scope and aim of the described event achievable?
+                                                Is the targeted profit of the event achievable?
                                             </List.Header>
                                             Check if yes - <Checkbox onChange={this.handleToggle} checked={this.state.targetCheck} id="targetCheck" />
                                             {this.state.targetCheck ? <p>Target Check Confirmed</p>: <p>Target Check Unconfirmed</p>}
@@ -423,7 +423,7 @@ export default class EOIDetails extends Component {
                                     <List.Item>
                                         <List.Content>
                                             <List.Header style={{ color: "#cb3538" }}>
-                                                Are Key people within the organization are able to help WBGS staff arrange the event and are authorized to make decisions?
+                                                Are Key people within the organization able to help WBGS staff arrange the event and are authorized to make decisions?
                                             </List.Header>
                                             Check if yes - <Checkbox onChange={this.handleToggle} checked={this.state.keyInfCheck} id="keyInfCheck" />
                                             {this.state.keyInfCheck ? <p>key People Check Confirmed</p>: <p>Key People Check Unconfirmed</p>}
