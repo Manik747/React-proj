@@ -92,7 +92,9 @@ class AdminDashboard extends Component {
                 </Button.Content>
                 </Button>
 
-                <div>
+                {
+                  Data.criteria && 
+                  <div>
                     
                   {Data.criteria.shortlisted ? (
                     <Image
@@ -107,7 +109,8 @@ class AdminDashboard extends Component {
                       src="/Assets/WBGS-logo dulled.png"
                     />
                   )}
-                </div>
+                </div> 
+                }
               </Card.Content>
             </Card>
           </Card.Group>

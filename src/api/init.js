@@ -9,7 +9,7 @@ const api = axios.create({
       // : "http://localhost:3000"
   headers: { "Content-Type": "application/json" },
   proxy: false,
-  // withCredentials: true
+  withCredentials: true
 });
 
 // api.defaults.headers.common["Authorization"] = 'Bearer '+  AUTH_TOKEN;
